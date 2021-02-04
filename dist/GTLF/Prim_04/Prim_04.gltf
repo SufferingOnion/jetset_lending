@@ -1,0 +1,148 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.3.48",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "008",
+            "rotation" : [
+                0,
+                0,
+                0.7071067094802856,
+                0.7071068286895752
+            ],
+            "scale" : [
+                0.0010000000474974513,
+                0.0010000000474974513,
+                0.0010000000474974513
+            ],
+            "translation" : [
+                38.07229232788086,
+                -2.8743779694195837e-06,
+                0
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "Material #2799",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5527864098548889
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Mesh.003",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "iStock-1055113168",
+            "uri" : "iStock-1055113168.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 40202,
+            "max" : [
+                19039.384765625,
+                76144.578125,
+                19039.384765625
+            ],
+            "min" : [
+                -19039.384765625,
+                0,
+                -19039.384765625
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 40202,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 40202,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 240000,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 482424,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 482424,
+            "byteOffset" : 482424
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 321616,
+            "byteOffset" : 964848
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 480000,
+            "byteOffset" : 1286464
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 1766464,
+            "uri" : "Prim_04.bin"
+        }
+    ]
+}
