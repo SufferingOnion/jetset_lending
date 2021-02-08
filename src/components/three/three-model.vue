@@ -67,16 +67,29 @@ export default {
 
       const loader = new GLTFLoader();
       let vm = this;
-      loader.load(process.env.NODE_ENV === 'production'? '/jetset_lending/': '' +'/GTLF/Logo/Logo.gltf', function (result) {
-        vm.logo = result.scene;
-        vm.logo.scale.set(75, 75, 75);
-        vm.logo.position.set(-400, 0, 0);
-        vm.logo.rotation.set(1.6, 0.3, -0.5);
-        vm.scene.add(vm.logo);
+      if(process.env.NODE_ENV === 'production'){
+        loader.load('/jetset_lending/GTLF/Logo/Logo.gltf', function (result) {
+          vm.logo = result.scene;
+          vm.logo.scale.set(75, 75, 75);
+          vm.logo.position.set(-400, 0, 0);
+          vm.logo.rotation.set(1.6, 0.3, -0.5);
+          vm.scene.add(vm.logo);
 
-      }, undefined, function (error) {
-        console.error(error, 'не загрузился');
-      });
+        }, undefined, function (error) {
+          console.error(error, 'не загрузился');
+        });
+      } else {
+        loader.load('/GTLF/Logo/Logo.gltf', function (result) {
+          vm.logo = result.scene;
+          vm.logo.scale.set(75, 75, 75);
+          vm.logo.position.set(-400, 0, 0);
+          vm.logo.rotation.set(1.6, 0.3, -0.5);
+          vm.scene.add(vm.logo);
+
+        }, undefined, function (error) {
+          console.error(error, 'не загрузился');
+        });
+      }
 
 
       //HELPERS
