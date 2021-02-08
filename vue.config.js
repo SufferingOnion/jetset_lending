@@ -4,5 +4,5 @@ module.exports = {
   },
 
   outputDir: 'docs',
-  publicPath: './'
+  publicPath: '/jetset_lending/'
 }
