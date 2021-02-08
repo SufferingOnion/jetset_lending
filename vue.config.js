@@ -1,4 +1,5 @@
 module.exports = {
-  runtimeCompiler: true,
-  publicPath: './'
+  css: {
+    sourceMap: true
+  }
 }

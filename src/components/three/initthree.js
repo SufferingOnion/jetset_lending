@@ -1,17 +1,44 @@
 import * as THREE from "three";
+
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { EffectComposer } from './postprocessing/EffectComposer.js';
+import { RenderPass } from './postprocessing/RenderPass.js';
+import { ShaderPass } from './postprocessing/ShaderPass.js';
+import { FXAAShader } from './shaders/FXAAShader.js';
 
-
+let composer1, fxaaPass, container;
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-const renderer = new THREE.WebGLRenderer();
+container = document.getElementById( 'container' );
+// RENDERER
+const renderer = new THREE.WebGLRenderer({
+    canvas: this.$refs.threejs,
+});
+renderer.autoClear = false;
+renderer.setPixelRatio( window.devicePixelRatio );
 
-renderer.outputEncoding = THREE.sRGBEncoding;
 
 
-renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
+
+
+// FXAA
+const renderPass = new RenderPass( scene, camera );
+
+//
+
+fxaaPass = new ShaderPass( FXAAShader );
+
+const pixelRatio = renderer.getPixelRatio();
+
+fxaaPass.material.uniforms[ 'resolution' ].value.x = 1 / ( container.offsetWidth * pixelRatio );
+fxaaPass.material.uniforms[ 'resolution' ].value.y = 1 / ( container.offsetHeight * pixelRatio );
+
+composer1 = new EffectComposer( renderer );
+composer1.addPass( renderPass );
+composer1.addPass( fxaaPass );
+
+//
 
 
 
@@ -20,7 +47,7 @@ const loader = new GLTFLoader();
 
 loader.load( '/GTLF/Logo/Logo.gltf', function ( result ) {
     logo = result.scene;
-    logo.scale.set(5,5,5);
+    logo.scale.set(6,6,6);
     logo.position.set(0, 0, 0);
     logo.rotation.set(1.5, 0, 0);
     scene.add(logo);
@@ -43,7 +70,7 @@ const directionalLight = new THREE.DirectionalLight( 0xffffff, 1 );
 scene.add( directionalLight );
 
 scene.background = new THREE.Color( 0xffffff );
-camera.position.z = 35;
+camera.position.z = 40;
 
 const animate = function () {
     requestAnimationFrame( animate );
@@ -53,12 +80,12 @@ const animate = function () {
 
 
 
-    renderer.render( scene, camera );
+    composer1.render();
 }
 const LogoRotation = function (e){
 
-    logo.rotation.z = (e.clientX - window.innerWidth/2)/1000;
-    logo.rotation.x = 1.4+(e.clientY - window.innerHeight/2)/1000;
+    logo.rotation.z = (e.clientX - window.innerWidth/2)/5000;
+    logo.rotation.x = 1.4+(e.clientY - window.innerHeight/2)/5000;
 }
 
 
