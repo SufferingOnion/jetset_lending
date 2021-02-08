@@ -67,7 +67,7 @@ export default {
 
       const loader = new GLTFLoader();
       let vm = this;
-      loader.load('/GTLF/Logo/Logo.gltf', function (result) {
+      loader.load(process.env.NODE_ENV === 'production'? '/jetset_lending/': '' +'/GTLF/Logo/Logo.gltf', function (result) {
         vm.logo = result.scene;
         vm.logo.scale.set(75, 75, 75);
         vm.logo.position.set(-400, 0, 0);
