@@ -9,10 +9,15 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
+    "@morioh/v-smooth-scrollbar": "^1.0.3",
     "core-js": "^3.6.5",
     "parallax-js": "^3.1.0",
+    "smooth-scrollbar": "^8.6.0",
     "three": "^0.125.2",
     "vue": "^2.6.11",
+    "vue-number-animation": "^1.0.5",
+    "vue-observe-visibility": "^1.0.0",
+    "vue-smooth-scrollbar": "^0.1.2",
     "vuex": "^3.4.0"
   },
   "devDependencies": {

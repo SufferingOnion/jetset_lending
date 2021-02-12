@@ -148,9 +148,16 @@ export default {
 
     },
   },
+  watch: {
+    logo: function (){
+      if(this.logo){
+        this.animate();
+        console.log('start 3D logo animation');
+      }
+    }
+  },
   mounted() {
     this.init();
-    this.animate();
   }
 }
 </script>
