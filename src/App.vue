@@ -5,6 +5,7 @@
     <About-company data-scroll-section></About-company>
     <Vue-showreel data-scroll-section></Vue-showreel>
     <Vue-instagramm data-scroll-section></Vue-instagramm>
+    <Vue-360 data-scroll-section></Vue-360>
   </div>
 </template>
 
@@ -13,7 +14,8 @@ import Header from "@/components/vue-header";
 import VueMenu from "@/components/vue-menu";
 import AboutCompany from "@/components/about-company";
 import VueShowreel from "@/components/vue-showreel";
-import VueInstagramm from "@/components/Vue-instagram"
+import VueInstagramm from "@/components/Vue-instagram";
+import Vue360 from "@/components/vue-360";
 
 export default {
   data() {
@@ -26,6 +28,8 @@ export default {
     "About-company": AboutCompany,
     "Vue-showreel": VueShowreel,
     "Vue-instagramm": VueInstagramm,
+    "Vue-360": Vue360,
+
   },
   created() {
 
