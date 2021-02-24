@@ -4,12 +4,12 @@
     <div class="insta_wrapper">
         <div v-for="(item, index) in 8" class="item" :key="index">
           <a href="https://www.instagram.com/jetsetholding/" class="img_wrapper">
-            <img :src="require(`../assets/img/insta${item}.jpg`)" class="img" alt="">
+            <img loading="lazy" :src="require(`../assets/img/insta${item}.jpg`)" class="img" alt="">
             <div class="img_descr">
                 <div class="stats">
-                  <img class="like_img" src="../assets/icons/like.svg" alt="">
+                  <img class="like_img" loading="lazy" src="../assets/icons/like.svg" alt="">
                   <span class="blue_text count">136</span>
-                  <img class="comment_img" src="../assets/icons/comments.svg" alt="">
+                  <img class="comment_img" loading="lazy" src="../assets/icons/comments.svg" alt="">
                   <span class="blue_text count">28</span>
                 </div>
                 <p class="blue_text">Сегодня в Петербурге прошла церемония награждения победителей ресторанной премии «Что, где есть в Петербурге» журнала @sobaka_ru. Город в очередной...</p>
@@ -34,6 +34,7 @@ export default {
 <style lang="scss">
 .insta_container{
   padding: 0 12.6%;
+  margin: 96px 0;
 }
 .insta_wrapper{
   display: grid;

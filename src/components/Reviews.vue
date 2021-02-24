@@ -1,13 +1,14 @@
 <template>
   <div class="reviews-wrapper">
     <Block-header>ОТЗЫВЫ</Block-header>
+    <div class="dots dots-horizontal"></div>
     <div class="reviews">
       <div class="glide__track" data-glide-el="track">
         <div class="glide__slides">
           <div v-for="(reviewer, index) in reviews" :key="index" class="glide__slide">
             <div class="logo_container-review">
-              <img class="logo" :src="require(`../assets/img/customers/${reviewer.img}-review.png`)">
-              <img class="logo-hover" :src="require(`../assets/img/customers/${reviewer.img}-review-hover.png`)">
+              <img class="logo" loading="lazy" :src="require(`../assets/img/customers/${reviewer.img}-review.png`)">
+              <img class="logo-hover" loading="lazy" :src="require(`../assets/img/customers/${reviewer.img}-review-hover.png`)">
             </div>
             <div class="review">
               <p class="reviewer_name header_text">{{ reviewer.name }}</p>
@@ -88,11 +89,32 @@ export default {
 }
 </script>
 <style lang="scss">
+.reviews-wrapper{
+  position: relative;
+  margin: 96px 0;
+  .dots-horizontal {
+    position: absolute;
+    z-index: -1;
+    width: 63.75%;
+    height: 194.71px;
+    mask-image: url("~@/assets/img/dot.svg");
+    mask-repeat: space;
+    background-color: rgba(21,15,15,0.05);
+    left: 18.125%;
+    top: 0;
+  }
+}
+
 .reviews{
+  position: relative;
+  z-index: 1;
   width: 100%;
+  .glide__track{
+
+  }
   .glide__slide{
     width: 100%;
-    padding: 0 12.6vw;
+    padding: 30px 12.6vw;
     display: flex;
     .logo_container-review{
         position: relative;
@@ -124,7 +146,8 @@ export default {
       display: flex;
       flex-flow: column nowrap;
       padding: 40px 55px;
-      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
+      background-color: #ffffff;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
       p{
         margin: 0;
       }

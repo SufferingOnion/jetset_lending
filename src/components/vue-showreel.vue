@@ -10,14 +10,14 @@
       <div class="glide__track" data-glide-el="track">
         <div class="glide__slides">
           <div class="glide__slide">
-            <Vue-counter val="22" :plus="''" :descr="'ГОДА ОПЫТА'"></Vue-counter>
-            <Vue-counter val="50" :plus="'+'" :descr="'ГЛОБАЛЬНЫХ ПРОЕКТОВ'"></Vue-counter>
-            <Vue-counter val="100" :plus="'+'" :descr="'ПРИЛОЖЕНИЙ И ВЕБ-ПРОЕКТОВ'"></Vue-counter>
-            <Vue-counter val="20" :plus="'+'" :descr="'ГЛОБАЛЬНЫХ ПАРТНЕРОВ'"></Vue-counter>
+            <Vue-counter val="22" :plus="''">ГОДА ОПЫТА</Vue-counter>
+            <Vue-counter val="50" :plus="'+'">ГЛОБАЛЬНЫХ<br>ПРОЕКТОВ</Vue-counter>
+            <Vue-counter val="100" :plus="'+'">ПРИЛОЖЕНИЙ<br>И ВЕБ-ПРОЕКТОВ</Vue-counter>
+            <Vue-counter val="20" :plus="'+'">ГЛОБАЛЬНЫХ<br>ПАРТНЕРОВ</Vue-counter>
           </div>
           <div class="glide__slide factoidMORE">
-            <Vue-counter val="1000" :plus="''" :descr="'КРУПНЫХ СОБЫТИЙ'"></Vue-counter>
-            <Vue-counter val="90000" :plus="''" :descr="'ЧАСОВ ВИДЕО, ДИЗАЙН ПРОЕКТОВ И ПРОМО-КОНСТРУКЦИЙ'"><span>БОЛЕЕ </span></Vue-counter>
+            <Vue-counter val="1000" :plus="''">КРУПНЫХ СОБЫТИЙ</Vue-counter>
+            <Vue-counter val="90000" :plus="''"><span>ЧАСОВ ВИДЕО, ДИЗАЙН ПРОЕКТОВ И ПРОМО-КОНСТРУКЦИЙ </span></Vue-counter>
           </div>
         </div>
       </div>
@@ -71,6 +71,9 @@ export default {
 
 <style lang="scss">
 
+.showreel{
+  margin: 96px 0;
+}
 
 .facts{
   position: relative;

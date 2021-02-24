@@ -12,10 +12,7 @@
 <script>
 import threeModel from "@/components/three/three-model";
 export default {
-  data() {
-    return {
-    }
-  },
+
   components: {
     "three-model": threeModel,
   }

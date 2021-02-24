@@ -3,8 +3,8 @@
     <Block-header>КЛЮЧЕВЫЕ<br>КЛИЕНТЫ</Block-header>
     <div class="customers">
       <div v-for="(i, index) in customer" :key="index" class="icon_container">
-        <img class="icon" :src="require(`../assets/img/customers/${i}.png`)">
-        <img class="icon-hover" :src="require(`../assets/img/customers/${i}-hover.png`)" >
+        <img class="icon" loading="lazy" :src="require(`../assets/img/customers/${i}.png`)">
+        <img class="icon-hover" loading="lazy" :src="require(`../assets/img/customers/${i}-hover.png`)" >
       </div>
     </div>
   </div>
@@ -42,6 +42,7 @@ export default {
 <style lang="scss">
 .customers-wrapper{
   padding: 0 12.6%;
+  margin: 96px 0;
 }
 .customers{
   display: grid;

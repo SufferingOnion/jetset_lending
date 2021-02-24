@@ -55,6 +55,9 @@ export default {
 </script>
 
 <style lang="scss">
+*{
+  -webkit-font-smoothing: antialiased;
+}
 .body{
   overflow-x: hidden;
 }

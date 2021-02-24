@@ -69,7 +69,7 @@ export default {
 <style lang="scss">
 
 .communication{
-  margin-top: 96px;
+  margin: 96px 0;
   box-sizing: border-box;
   width: 100%;
   height: 36vw;

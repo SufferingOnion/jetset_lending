@@ -6,8 +6,9 @@
         <div class="dots dots-vertical"></div>
         <div class="dots dots-horizontal"></div>
       </div>
-      <img data-depth="0.2" class="denis_popov-img" src="../assets/img/denis_popov.png" alt="">
+
       <div data-depth="0.25" class="denis_popov-ceo">
+        <img data-depth="0.2" class="denis_popov-img" src="../assets/img/denis_popov.png" alt="">
         <div class="ceo">
           <span class="header_text">Денис Попов</span>
           <p class="blue_text">Основатель и президент Jetset Holding</p>
@@ -66,6 +67,26 @@ export default {
     width: 100%;
     height: 60vh;
   }
+  .dots {
+    position: absolute;
+    width: 687.38px;
+    height: 194.71px;
+    mask-image: url("~@/assets/img/dot.svg");
+    mask-repeat: space;
+    background-color: #ffffff;
+
+    &-horizontal {
+
+      right: 8.68%;
+      bottom: 106px;
+    }
+
+    &-vertical {
+      transform: rotate(90deg);
+      left: -18%;
+      top: 16%;
+    }
+  }
 }
 
 .dots-container {
@@ -77,25 +98,25 @@ export default {
 }
 
 .denis_popov-img {
-  position: absolute;
-  right: 0;
-  top: 0;
+
 }
 
 .denis_popov-ceo {
   position: absolute;
   right: 0;
-  bottom: 11%;
-  width: 617px;
-  height: 123px;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 
   .ceo {
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: -15%;
+    left: -5%;
     background: #1E30F4;
-    width: 617px;
-    height: 123px;
+    width: 110%;
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -138,31 +159,15 @@ export default {
   &.svgBlueCircle{
     top: 40%;
     right: 10%;
+    z-index: 11;
   }
   &.svgTriangle{
     top: 10%;
     left: 60%;
+
   }
 }
 
-.dots {
-  position: absolute;
-  width: 687.38px;
-  height: 194.71px;
-  background: url("~@/assets/img/dot.svg") space;
-
-  &-horizontal {
-
-    right: 8.68%;
-    bottom: 106px;
-  }
-
-  &-vertical {
-    transform: rotate(90deg);
-    left: -18%;
-    top: 16%;
-  }
-}
 .about-company-text{
   position: absolute;
   width: 491px;

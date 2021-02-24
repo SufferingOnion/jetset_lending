@@ -1,5 +1,5 @@
 <template>
-  <div class="reviews-wrapper">
+  <div class="crew-wrapper">
     <Block-header>ОТЗЫВЫ</Block-header>
     <div class="crew">
       <div class="glide__track" data-glide-el="track">
@@ -7,6 +7,7 @@
           <div v-for="(member, index) in crew" :key="index" class="glide__slide">
             <div class="member_container">
               <img class="member"
+                   loading="lazy"
                    :src="require(`../assets/img/crew/${member.name + ' ' + member.sername}.jpg`)"
                    :style="{width: 'calc(23.8125vw - 20px)'}"
               >
@@ -133,6 +134,9 @@ export default {
 }
 </script>
 <style lang="scss">
+.crew-wrapper{
+  margin: 96px 0;
+}
 .glide__slides{
   overflow: visible !important;
 }
@@ -170,16 +174,16 @@ export default {
       }
     }
   }
-
-}
-.glide__slide:nth-child(odd) {
+  .glide__slide:nth-child(odd) {
 
     padding-bottom: 8.75vw;
 
-}
-.glide__slide:nth-child(even) {
+  }
+  .glide__slide:nth-child(even) {
 
     padding-top: 8.75vw;
 
+  }
 }
+
 </style>

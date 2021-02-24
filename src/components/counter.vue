@@ -5,7 +5,7 @@
           class="header_text factoid_text"
           :style="{width: 100 + '%'}"
     >
-      <slot></slot>
+
     <number
         v-observe-visibility="CountIsVisible"
         animationPaused
@@ -16,8 +16,8 @@
         easing="Expo.easeNone"
     />{{ this.plus }}
   </span>
-  <span class="descr">
-    {{ this.descr }}
+  <span class="blue_text descr">
+    <slot></slot>
   </span>
 </div>
 </template>
@@ -25,7 +25,7 @@
 <script>
 
 export default {
-  props: ['val', 'plus', 'descr'],
+  props: ['val', 'plus'],
   data() {
     return {
       number: 0,
@@ -71,6 +71,10 @@ export default {
   .descr{
     width: 100%;
     text-align: center;
+    font-size: 21px;
+    line-height: 31px;
+    text-transform: uppercase;
+    color: #150F0F;
   }
 }
 
