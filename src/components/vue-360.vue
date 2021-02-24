@@ -1,6 +1,7 @@
 <template>
   <div class="communication">
-    <div ref="carousel" class="carousel" :style="{transform: 'rotateY('+this.currdeg+'deg)'}">
+    <div ref="carousel" class="carousel"
+         :style="{transform: 'rotateY('+this.currdeg+'deg)'}">
           <div class="slide__item a">
             <img src="../assets/img/communicatio1.png" alt="">
           </div>
@@ -20,9 +21,6 @@
             <img src="../assets/img/communicatio1.png" alt="">
           </div>
         </div>
-    <button @click="Rotate">
-      rotate
-    </button>
   </div>
 </template>
 
@@ -34,15 +32,35 @@ export default {
   data(){
     return{
       currdeg: 0,
+      pointerStartX: undefined,
+      pointerEndX: undefined,
+      pointerDist: 30,
     }
   },
   methods: {
     Rotate(){
-      this.currdeg+=60;
-    }
+      console.log('UP')
+      if(this.pointerEndX-this.pointerStartX>this.pointerDist){
+        this.currdeg+=60;
+      }
+      if(this.pointerEndX-this.pointerStartX<-this.pointerDist){
+        this.currdeg+=-60;
+      }
+    },
+
   },
   mounted() {
-
+    this.$refs.carousel.addEventListener('pointerdown', (event) => {
+      event.preventDefault();
+      this.pointerStartX = event.x;
+    });
+    // this.$refs.carousel.addEventListener('dragstart', (event) => {
+    //   event.preventDefault();
+    // });
+    this.$refs.carousel.addEventListener('pointerup', (event) => {
+      this.pointerEndX = event.x;
+      this.Rotate()
+    });
   }
 }
 
@@ -51,23 +69,18 @@ export default {
 <style lang="scss">
 
 .communication{
+  margin-top: 96px;
   box-sizing: border-box;
   width: 100%;
   height: 36vw;
   position: relative;
   perspective: 200vw;
-  button{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-  }
 }
 .carousel {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  height: inherit;
+  height: 36vw;
   width: inherit;
   position: absolute;
   transform-style: preserve-3d;
@@ -78,36 +91,39 @@ export default {
   display: block;
   position: absolute;
   background: #000;
-  width: 24%;
-  height: 18vw;
-  opacity: 0.95;
+  width: 49vw;
+  height: 36vw;
+
+  transform: scale(0.8);
   img{
     width: 100%;
+    user-select: none;
+
   }
 }
 
 .a {
-  transform: rotateY(0deg) translateZ(24vw);
+  transform: rotateY(0deg) translateZ(36vw) scale(0.8);
   background: #ed1c24;
 }
 .b {
-  transform: rotateY(60deg) translateZ(24vw);
+  transform: rotateY(60deg) translateZ(36vw) scale(0.8);
   background: #0072bc;
 }
 .c {
-  transform: rotateY(120deg) translateZ(24vw);
+  transform: rotateY(120deg) translateZ(36vw) scale(0.8);
   background: #39b54a;
 }
 .d {
-  transform: rotateY(180deg) translateZ(24vw);
+  transform: rotateY(180deg) translateZ(36vw) scale(0.8);
   background: #f26522;
 }
 .e {
-  transform: rotateY(240deg) translateZ(24vw);
+  transform: rotateY(240deg) translateZ(36vw) scale(0.8);
   background: #630460;
 }
 .f {
-  transform: rotateY(300deg) translateZ(24vw);
+  transform: rotateY(300deg) translateZ(36vw) scale(0.8);
   background: #8c6239;
 }
 

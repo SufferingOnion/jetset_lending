@@ -71,37 +71,38 @@ export default {
 
 <style lang="scss">
 
-.glide__arrows{
-  .glide__arrow{
-    display: block;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    z-index: 1;
-    background: url("~@/assets/icons/arrow.svg") center no-repeat;
-    background-size: contain;
-    border: 0;
-    cursor: pointer;
-    &--left{
-      left: 5%;
-      top: 50%;
-    }
-    &--right{
-      right: 5%;
-      top: 50%;
-      transform: rotate(180deg);
-    }
-  }
-}
-.glide__slide{
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
-  padding: 0 12.6vw;
-}
+
 .facts{
   position: relative;
   margin-bottom: 150px;
+  .glide__arrows{
+    .glide__arrow{
+      display: block;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      z-index: 1;
+      background: url("~@/assets/icons/arrow.svg") center no-repeat;
+      background-size: contain;
+      border: 0;
+      cursor: pointer;
+      &--left{
+        left: 5%;
+        top: 50%;
+      }
+      &--right{
+        right: 5%;
+        top: 50%;
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .glide__slide{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    padding: 0 12.6vw;
+  }
 }
 .factoidMORE{
   grid-auto-columns: 1fr 2fr;

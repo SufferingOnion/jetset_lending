@@ -18,5 +18,6 @@
   font-size: 48px;
   line-height: 58px;
   color: #1E30F4;
+  text-align: center;
 }
 </style>

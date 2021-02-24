@@ -27,6 +27,8 @@ export default {
       logo: null,
       mouseX: null,
       mouseY: null,
+      width: null,
+      height: null,
     }
   },
   methods: {
@@ -34,8 +36,8 @@ export default {
       // SCENE AND CAMERA
       this.scene = new THREE.Scene();
 
-      this.camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, -200, 550 );
-      this.camera.position.z = 120;
+      this.camera = new THREE.PerspectiveCamera( 45, ( window.innerWidth ) / window.innerHeight, 1000, 2000 );
+      this.camera.position.z = 1500;
 
 
       // RENDERER
@@ -44,8 +46,8 @@ export default {
         canvas: this.$refs.threejs,
       });
       this.renderer.autoClear = false;
-      this.renderer.setSize(this.$refs.threejs.offsetWidth, this.$refs.threejs.offsetHeight);
       this.renderer.setPixelRatio(window.devicePixelRatio);
+      this.renderer.setSize(window.innerWidth, window.innerHeight);
 
 
       // FXAA
@@ -94,9 +96,6 @@ export default {
 
       //HELPERS
 
-      const axesHelper = new THREE.AxesHelper(35);
-      this.scene.add(axesHelper);
-
 
       //EVENTS
 
@@ -113,7 +112,13 @@ export default {
 
       this.scene.background = new THREE.Color(0xffffff);
       window.addEventListener('mousemove', this.onDocumentMouseMove);
-
+      console.log({
+        top: this.camera.top,
+        bottom: this.camera.bottom,
+        left: this.camera.left,
+        right: this.camera.right,
+        aspect: this.camera.aspect
+      });
     },
     onDocumentMouseMove: function(e){
       this.mouseX = e.clientX;
@@ -125,27 +130,29 @@ export default {
     },
     animate: function () {
       requestAnimationFrame(this.animate);
+      this.renderer.setViewport( 0, 0, window.innerWidth, window.innerHeight );
       this.render();
       this.composer1.render();
     },
-    onWindowResize: function () {
+    onWindowResize: function (event) {
 
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-      const aspect = width / height;
 
-      this.camera.aspect = aspect;
+      this.camera.aspect = window.innerWidth / window.innerHeight;
       this.camera.updateProjectionMatrix();
 
-      this.camera.left = -height * aspect;
-      this.camera.right = height * aspect;
-      this.camera.top = height;
-      this.camera.bottom = -height;
-      this.camera.updateProjectionMatrix();
+      this.renderer.setSize( window.innerWidth, window.innerHeight );
+      this.composer1.setSize( window.innerWidth, window.innerHeight );
 
-      this.renderer.setSize(width, height);
-      this.composer1.setSize(width, height);
+      const pixelRatio = this.renderer.getPixelRatio();
 
+      this.fxaaPass.material.uniforms[ 'resolution' ].value.x = 1 / ( window.innerWidth * pixelRatio );
+      this.fxaaPass.material.uniforms[ 'resolution' ].value.y = 1 / ( window.innerHeight * pixelRatio );
+
+      console.log({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        Event: event,
+      })
     },
   },
   watch: {
@@ -158,6 +165,8 @@ export default {
   },
   mounted() {
     this.init();
+    this.width = this.$refs.threejs.offsetWidth;
+    this.height = this.$refs.threejs.offsetHeight;
   }
 }
 </script>
