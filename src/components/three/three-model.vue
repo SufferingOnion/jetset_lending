@@ -72,9 +72,9 @@ export default {
       if(process.env.NODE_ENV === 'production'){
         loader.load('/jetset_lending/GTLF/Logo/Logo.gltf', function (result) {
           vm.logo = result.scene;
-          vm.logo.scale.set(75, 75, 75);
-          vm.logo.position.set(-400, 0, 0);
-          vm.logo.rotation.set(1.6, 0.3, -0.5);
+          vm.logo.scale.set(300, 300, 300);
+          vm.logo.position.set(-400, -50, 0);
+          vm.logo.rotation.set(0, .1, 0);
           vm.scene.add(vm.logo);
 
         }, undefined, function (error) {
@@ -83,9 +83,9 @@ export default {
       } else {
         loader.load('/GTLF/Logo/Logo.gltf', function (result) {
           vm.logo = result.scene;
-          vm.logo.scale.set(75, 75, 75);
-          vm.logo.position.set(-400, 0, 0);
-          vm.logo.rotation.set(1.6, 0.3, -0.5);
+          vm.logo.scale.set(300, 300, 300);
+          vm.logo.position.set(-500, -50, 0);
+          vm.logo.rotation.set(0, .1, 0);
           vm.scene.add(vm.logo);
 
         }, undefined, function (error) {

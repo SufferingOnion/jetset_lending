@@ -8,14 +8,29 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0
+                0,
+                1
             ]
         }
     ],
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Cylinder005"
+            "name" : "logo",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ]
+        },
+        {
+            "name" : "Point",
+            "translation" : [
+                0.9227806925773621,
+                1.778434157371521,
+                -0.8891410827636719
+            ]
         }
     ],
     "materials" : [
@@ -26,14 +41,14 @@
                 0,
                 0
             ],
-            "name" : "Material #22.001",
+            "name" : "Material_#22",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
                     "texCoord" : 0
                 },
                 "metallicFactor" : 0,
-                "roughnessFactor" : 0.5527864098548889
+                "roughnessFactor" : 0.2755137085914612
             }
         },
         {
@@ -45,20 +60,18 @@
             ],
             "name" : "Material.002",
             "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0.1618942767381668,
-                    0.1618942767381668,
-                    0.1618942767381668,
-                    1
-                ],
-                "metallicFactor" : 0.4727272689342499,
-                "roughnessFactor" : 0.5
+                "baseColorTexture" : {
+                    "index" : 1,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 1,
+                "roughnessFactor" : 0
             }
         }
     ],
     "meshes" : [
         {
-            "name" : "Mesh.001",
+            "name" : "logo",
             "primitives" : [
                 {
                     "attributes" : {
@@ -84,9 +97,17 @@
     "textures" : [
         {
             "source" : 0
+        },
+        {
+            "source" : 1
         }
     ],
     "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "iStock-1044136070",
+            "uri" : "iStock-1044136070.jpg"
+        },
         {
             "mimeType" : "image/jpeg",
             "name" : "iStock-1055113168",
@@ -97,118 +118,118 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 7280,
+            "count" : 7660,
             "max" : [
-                5.235382556915283,
-                0.37771040201187134,
-                5.193945407867432
+                1.5201681852340698,
+                1.2286900281906128,
+                0.00031900001340545714
             ],
             "min" : [
-                -5.127276420593262,
-                -0.37769779562950134,
-                -5.168715000152588
+                -1.3739030361175537,
+                -1.6653820276260376,
+                -0.21043699979782104
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 7280,
+            "count" : 7660,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 7280,
+            "count" : 7660,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 41376,
+            "count" : 43656,
             "type" : "SCALAR"
         },
         {
             "bufferView" : 4,
             "componentType" : 5126,
-            "count" : 4193,
+            "count" : 3455,
             "max" : [
-                5.240622043609619,
-                0.3689759373664856,
-                5.199184894561768
+                1.5201681852340698,
+                1.2286900281906128,
+                -0.009428000077605247
             ],
             "min" : [
-                -5.1325154304504395,
-                -0.36896342039108276,
-                -5.173954486846924
+                -1.3739030361175537,
+                -1.6653820276260376,
+                -0.20800000429153442
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 5,
             "componentType" : 5126,
-            "count" : 4193,
+            "count" : 3455,
             "type" : "VEC3"
         },
         {
             "bufferView" : 6,
             "componentType" : 5126,
-            "count" : 4193,
+            "count" : 3455,
             "type" : "VEC2"
         },
         {
             "bufferView" : 7,
             "componentType" : 5123,
-            "count" : 18240,
+            "count" : 15960,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 87360,
+            "byteLength" : 91920,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 87360,
-            "byteOffset" : 87360
+            "byteLength" : 91920,
+            "byteOffset" : 91920
         },
         {
             "buffer" : 0,
-            "byteLength" : 58240,
-            "byteOffset" : 174720
+            "byteLength" : 61280,
+            "byteOffset" : 183840
         },
         {
             "buffer" : 0,
-            "byteLength" : 82752,
-            "byteOffset" : 232960
+            "byteLength" : 87312,
+            "byteOffset" : 245120
         },
         {
             "buffer" : 0,
-            "byteLength" : 50316,
-            "byteOffset" : 315712
+            "byteLength" : 41460,
+            "byteOffset" : 332432
         },
         {
             "buffer" : 0,
-            "byteLength" : 50316,
-            "byteOffset" : 366028
+            "byteLength" : 41460,
+            "byteOffset" : 373892
         },
         {
             "buffer" : 0,
-            "byteLength" : 33544,
-            "byteOffset" : 416344
+            "byteLength" : 27640,
+            "byteOffset" : 415352
         },
         {
             "buffer" : 0,
-            "byteLength" : 36480,
-            "byteOffset" : 449888
+            "byteLength" : 31920,
+            "byteOffset" : 442992
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 486368,
-            "uri" : "Logo.bin"
+            "byteLength" : 474912,
+            "uri" : "logo.bin"
         }
     ]
 }

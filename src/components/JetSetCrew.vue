@@ -7,7 +7,6 @@
           <div v-for="(member, index) in crew" :key="index" class="glide__slide">
             <div class="member_container">
               <img class="member"
-                   loading="lazy"
                    :src="require(`../assets/img/crew/${member.name + ' ' + member.sername}.jpg`)"
                    :style="{width: 'calc(23.8125vw - 20px)'}"
               >

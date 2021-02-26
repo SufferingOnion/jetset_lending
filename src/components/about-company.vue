@@ -71,7 +71,7 @@ export default {
     position: absolute;
     width: 687.38px;
     height: 194.71px;
-    mask-image: url("~@/assets/img/dot.svg");
+    mask-image: url("~@/assets/icons/dot.svg");
     mask-repeat: space;
     background-color: #ffffff;
 

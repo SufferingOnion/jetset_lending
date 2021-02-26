@@ -9,6 +9,7 @@
     <Key-customers/>
     <Reviews/>
     <JetSet-crew></JetSet-crew>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import Vue360 from "@/components/vue-360";
 import KeyCustomers from "@/components/KeyCustomers";
 import Reviews from "@/components/Reviews";
 import JetSetCrew from "@/components/JetSetCrew";
+import Footer from "@/components/footer";
 
 
 export default {
@@ -39,6 +41,7 @@ export default {
     "Key-customers": KeyCustomers,
     "Reviews": Reviews,
     "JetSet-crew": JetSetCrew,
+    "Footer": Footer,
 
   },
   created() {

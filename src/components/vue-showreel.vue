@@ -131,7 +131,7 @@ video{
       left: calc(50% - 56px);
       width: 112px;
       height: 112px;
-      background: url("~@/assets/img/play.svg") no-repeat center;
+      background: url("~@/assets/icons/play.svg") no-repeat center;
       background-size: 100%;
       cursor: pointer;
     }

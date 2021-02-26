@@ -97,7 +97,7 @@ export default {
     z-index: -1;
     width: 63.75%;
     height: 194.71px;
-    mask-image: url("~@/assets/img/dot.svg");
+    mask-image: url("~@/assets/icons/dot.svg");
     mask-repeat: space;
     background-color: rgba(21,15,15,0.05);
     left: 18.125%;
