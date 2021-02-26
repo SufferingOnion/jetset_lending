@@ -70,7 +70,7 @@ export default {
       const loader = new GLTFLoader();
       let vm = this;
       if(process.env.NODE_ENV === 'production'){
-        loader.load('/jetset_lending/GTLF/Logo/Logo.gltf', function (result) {
+        loader.load('/jetset_lending/GTLF/Logo/logo.gltf', function (result) {
           vm.logo = result.scene;
           vm.logo.scale.set(300, 300, 300);
           vm.logo.position.set(-400, -50, 0);
@@ -81,7 +81,7 @@ export default {
           console.error(error, 'не загрузился');
         });
       } else {
-        loader.load('/GTLF/Logo/Logo.gltf', function (result) {
+        loader.load('/GTLF/Logo/logo.gltf', function (result) {
           vm.logo = result.scene;
           vm.logo.scale.set(300, 300, 300);
           vm.logo.position.set(-500, -50, 0);
