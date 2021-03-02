@@ -45,7 +45,9 @@ export default {
       this.renderer = new THREE.WebGLRenderer({
         canvas: this.$refs.threejs,
       });
-      this.renderer.autoClear = false;
+      this.renderer.physicallyCorrectLights = true;
+      this.renderer.outputEncoding = THREE.sRGBEncoding;
+      this.renderer.setClearColor( 0xcccccc );
       this.renderer.setPixelRatio(window.devicePixelRatio);
       this.renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -71,7 +73,7 @@ export default {
       let vm = this;
       if(process.env.NODE_ENV === 'production'){
         loader.load('/jetset_lending/GTLF/Logo/Logo.gltf', function (result) {
-          vm.logo = result.scene;
+          vm.logo = result.scene || result.scenes[0];
           vm.logo.scale.set(300, 300, 300);
           vm.logo.position.set(-400, -50, 0);
           vm.logo.rotation.set(0, .1, 0);
@@ -82,7 +84,7 @@ export default {
         });
       } else {
         loader.load('/GTLF/Logo/Logo.gltf', function (result) {
-          vm.logo = result.scene;
+          vm.logo = result.scene || result.scenes[0];
           vm.logo.scale.set(300, 300, 300);
           vm.logo.position.set(-500, -50, 0);
           vm.logo.rotation.set(0, .1, 0);
@@ -102,10 +104,14 @@ export default {
       window.addEventListener('resize', this.onWindowResize);
 
       // LIGHTS
-      const light = new THREE.AmbientLight(0xffffff, 1); // soft white light
+      const light = new THREE.AmbientLight(0xffffff, 2); // soft white light
       this.scene.add(light);
       const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-      this.scene.add(directionalLight);
+      directionalLight.target = this.logo;
+      this.scene.add(directionalLight.target);
+
+      const HemisphereLight = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
+      this.scene.add( HemisphereLight );
 
 
       // BACKGROUND
