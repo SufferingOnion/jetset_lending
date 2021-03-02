@@ -9,6 +9,9 @@
 import * as THREE from "three";
 
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
+// import { HDRCubeTextureLoader } from 'three/examples/jsm/loaders/HDRCubeTextureLoader.js';
+import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
+
 import {EffectComposer} from './postprocessing/EffectComposer.js';
 import {RenderPass} from './postprocessing/RenderPass.js';
 import {ShaderPass} from './postprocessing/ShaderPass.js';
@@ -29,6 +32,7 @@ export default {
       mouseY: null,
       width: null,
       height: null,
+      generatedCubeRenderTarget: null,
     }
   },
   methods: {
@@ -39,13 +43,14 @@ export default {
       this.camera = new THREE.PerspectiveCamera( 45, ( window.innerWidth ) / window.innerHeight, 1000, 2000 );
       this.camera.position.z = 1500;
 
-
       // RENDERER
 
       this.renderer = new THREE.WebGLRenderer({
         canvas: this.$refs.threejs,
       });
       this.renderer.physicallyCorrectLights = true;
+      this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      this.renderer.toneMappingExposure = 1;
       this.renderer.outputEncoding = THREE.sRGBEncoding;
       this.renderer.setClearColor( 0xcccccc );
       this.renderer.setPixelRatio(window.devicePixelRatio);
@@ -104,10 +109,12 @@ export default {
       window.addEventListener('resize', this.onWindowResize);
 
       // LIGHTS
+
       const light = new THREE.AmbientLight(0xffffff, 2); // soft white light
       this.scene.add(light);
+
       const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-      directionalLight.target = this.logo;
+      directionalLight.target.position.set(-400, -50, 0);
       this.scene.add(directionalLight.target);
 
       const HemisphereLight = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
@@ -125,6 +132,24 @@ export default {
         right: this.camera.right,
         aspect: this.camera.aspect
       });
+
+      //ENVIRONMENT
+      const pmremGenerator = new THREE.PMREMGenerator( this.renderer );
+      pmremGenerator.compileEquirectangularShader();
+
+      new RGBELoader()
+          .setDataType( THREE.UnsignedByteType )
+          .setPath(process.env.NODE_ENV === 'production'?'/jetset_lending/hdr/':'./hdr/')
+          .load( 'background2.hdr', function ( texture ) {
+
+            const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
+
+            vm.scene.environment = envMap;
+
+            texture.dispose();
+            pmremGenerator.dispose();
+
+          } );
     },
     onDocumentMouseMove: function(e){
       this.mouseX = e.clientX;
