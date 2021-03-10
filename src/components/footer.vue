@@ -6,7 +6,7 @@
       </h2>
       <p class="blue_text needProject_content">
         Оставьте заявку, либо звоните, мы пообщаемся <br>
-        и сами все за вас заполним: +7 812 915-15-15
+        и сами все за вас заполним: <a class="content_tel" href="tel:+7 812 915-15-15">+7 812 915-15-15</a>
       </p>
     </div>
     <form class="footer_proposal proposal">
@@ -53,14 +53,19 @@ export default {
 <style lang="scss">
 .footer{
   padding: 5.5vw 12.6%;
-  display: flex;
-  flex-flow: row wrap;
   background: url("~@/assets/img/footer_background.png") center no-repeat;
   background-size: cover;
+  //display: flex;
+  //flex-flow: column wrap;
+  display: grid;
+  grid-template-columns: 41% 41.6%;
+  grid-template-rows: 1fr 1fr;
+  gap: 0 17.8%;
   &_proposal{
+    grid-column: 2;
+    grid-row: span 2;
     display: flex;
     flex-flow: column;
-    flex: 35% 1 2;
     .input{
       border: 0;
       border-bottom: 1px solid #150F0F;
@@ -114,7 +119,7 @@ export default {
     }
   }
   .needProject{
-    flex: 35% 1 1;
+
     &_header{
       font-size: 24px;
       line-height: 36px;
@@ -127,20 +132,35 @@ export default {
       line-height: 27px;
       color: #150F0F;
       margin-top: 0;
+      .content_tel{
+        font-size: inherit;
+        line-height: inherit;
+        color: inherit;
+        text-decoration: inherit;
+      }
     }
+
   }
   .contacts{
-    flex: 35% 1 2;
+    grid-column: 1;
+
+    display: flex;
+    flex-flow: row wrap;
+
     .email{
+      flex: 100% 1 1;
       font-size: 20px;
       line-height: 150%;
       color: #150F0F;
+      margin-bottom: 2.7em;
     }
     &_logo{
       display: block;
       background: url("../assets/icons/logo.svg") center no-repeat;
       width: 71px;
       height: 71px;
+      margin-right: 6em;
+
     }
     &_fb{
       display: block;
