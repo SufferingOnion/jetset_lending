@@ -47,6 +47,7 @@ export default {
 
       this.renderer = new THREE.WebGLRenderer({
         canvas: this.$refs.threejs,
+        antialiasing: true
       });
       this.renderer.physicallyCorrectLights = true;
       this.renderer.toneMapping = THREE.ACESFilmicToneMapping;

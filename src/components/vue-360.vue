@@ -1,7 +1,7 @@
 <template>
   <div class="communication">
-    <div ref="carousel" class="carousel"
-         :style="{transform: 'rotateY('+this.currdeg+'deg)'}">
+    <div ref="carousel" class="carousel" :style="{transform: 'rotateY('+this.currdeg+'deg)'}">
+<!--         :style="{transform: 'rotateY('+this.currdeg+'deg)'}">-->
           <div class="slide__item a">
             <img src="../assets/img/communicatio1.png" alt="">
           </div>
@@ -35,32 +35,55 @@ export default {
       pointerStartX: undefined,
       pointerEndX: undefined,
       pointerDist: 30,
+      isDragging: false,
     }
   },
   methods: {
     Rotate(){
-      console.log('UP')
+
       if(this.pointerEndX-this.pointerStartX>this.pointerDist){
-        this.currdeg+=60;
+        this.currdeg+=30;
       }
       if(this.pointerEndX-this.pointerStartX<-this.pointerDist){
         this.currdeg+=-60;
       }
+      // if(this.isDragging){
+      //   console.log(event.offsetX,'\n', this.pointerStartX)
+      //   if(event.offsetX>this.pointerStartX){
+      //     this.currdeg+=1;
+      //   }
+      //   if(event.offsetX<this.pointerStartX){
+      //     this.currdeg+=-1;
+      //   }
+      //   this.$refs.carousel.style.transform = 'rotateY('+this.currdeg+'deg)';
+      // }
     },
-
+    // Throttle(f, t){
+    //   return function (args) {
+    //     let previousCall = this.lastCall;
+    //     this.lastCall = Date.now();
+    //     if (previousCall && ((this.lastCall - previousCall) <= t)) {
+    //       clearTimeout(this.lastCallTimer);
+    //     }
+    //     this.lastCallTimer = setTimeout(() => f(args), t);
+    //   }
+    // }
   },
   mounted() {
     this.$refs.carousel.addEventListener('pointerdown', (event) => {
       event.preventDefault();
       this.pointerStartX = event.x;
+      // this.isDragging = true;
     });
-    // this.$refs.carousel.addEventListener('dragstart', (event) => {
-    //   event.preventDefault();
-    // });
+    // this.$refs.carousel.addEventListener('pointermove', this.Rotate);
     this.$refs.carousel.addEventListener('pointerup', (event) => {
       this.pointerEndX = event.x;
+      // this.isDragging = false;
       this.Rotate()
     });
+    // this.$refs.carousel.addEventListener('pointerleave', () => {
+    //   this.isDragging = false;
+    // });
   }
 }
 
@@ -84,7 +107,7 @@ export default {
   width: inherit;
   position: absolute;
   transform-style: preserve-3d;
-  transition: transform 1s;
+  transition: transform 2s;
 }
 
 .slide__item {
