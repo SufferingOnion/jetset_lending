@@ -92,8 +92,8 @@ export default {
         loader.load('/GTLF/Logo/Logo.gltf', function (result) {
           vm.logo = result.scene || result.scenes[0];
           vm.logo.scale.set(300, 300, 300);
-          vm.logo.position.set(-500, -50, 0);
-          vm.logo.rotation.set(0, .1, 0);
+          vm.logo.position.set(-window.innerWidth/100*20, -50, 0);
+          vm.logo.rotation.set(0, .3, 0);
           vm.scene.add(vm.logo);
 
         }, undefined, function (error) {
@@ -126,13 +126,6 @@ export default {
 
       this.scene.background = new THREE.Color(0xffffff);
       window.addEventListener('mousemove', this.onDocumentMouseMove);
-      console.log({
-        top: this.camera.top,
-        bottom: this.camera.bottom,
-        left: this.camera.left,
-        right: this.camera.right,
-        aspect: this.camera.aspect
-      });
 
       //ENVIRONMENT
       const pmremGenerator = new THREE.PMREMGenerator( this.renderer );
@@ -157,8 +150,8 @@ export default {
       this.mouseY = e.clientY;
     },
     render: function(){
-        this.logo.rotation.z = -0.5-(this.mouseX - window.innerWidth / 2) / 5000;
-        this.logo.rotation.x = 1.6 + (this.mouseY - window.innerHeight / 2) / 5000;
+        this.logo.rotation.z = -0.35-(this.mouseX - window.innerWidth / 2) / 5000;
+        this.logo.rotation.x = 1.3 + (this.mouseY - window.innerHeight / 2) / 5000;
     },
     animate: function () {
       requestAnimationFrame(this.animate);
@@ -166,7 +159,7 @@ export default {
       this.render();
       this.composer1.render();
     },
-    onWindowResize: function (event) {
+    onWindowResize: function () {
 
 
       this.camera.aspect = window.innerWidth / window.innerHeight;
@@ -179,12 +172,7 @@ export default {
 
       this.fxaaPass.material.uniforms[ 'resolution' ].value.x = 1 / ( window.innerWidth * pixelRatio );
       this.fxaaPass.material.uniforms[ 'resolution' ].value.y = 1 / ( window.innerHeight * pixelRatio );
-
-      console.log({
-        width: window.innerWidth,
-        height: window.innerHeight,
-        Event: event,
-      })
+      this.logo.position.set(-window.innerWidth/100*20, -50, 0);
     },
   },
   watch: {

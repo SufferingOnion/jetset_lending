@@ -12,6 +12,10 @@
           <div class="glide__slide">
             <Vue-counter val="22" :plus="''">ГОДА ОПЫТА</Vue-counter>
             <Vue-counter val="50" :plus="'+'">ГЛОБАЛЬНЫХ<br>ПРОЕКТОВ</Vue-counter>
+            <Vue-counter class="desktop_factoid" val="100" :plus="'+'">ПРИЛОЖЕНИЙ<br>И ВЕБ-ПРОЕКТОВ</Vue-counter>
+            <Vue-counter class="desktop_factoid" val="20" :plus="'+'">ГЛОБАЛЬНЫХ<br>ПАРТНЕРОВ</Vue-counter>
+          </div>
+          <div v-if="false" class="glide__slide mobile_factoid">
             <Vue-counter val="100" :plus="'+'">ПРИЛОЖЕНИЙ<br>И ВЕБ-ПРОЕКТОВ</Vue-counter>
             <Vue-counter val="20" :plus="'+'">ГЛОБАЛЬНЫХ<br>ПАРТНЕРОВ</Vue-counter>
           </div>
@@ -32,6 +36,7 @@
 <script>
 import BlockHeader from './block-header'
 import Glide from '@glidejs/glide'
+import Html from '@glidejs/glide/src/components/html';
 import counter from "@/components/counter";
 
 export default {
@@ -43,6 +48,7 @@ export default {
     return{
       isPlaying: false,
       Glide: null,
+      device: ''
     }
   },
   methods: {
@@ -56,14 +62,47 @@ export default {
         this.isPlaying = !this.isPlaying;
       }
     },
+    UpdateSlider: function (){
+
+      if(window.innerWidth>768 && this.device==='mobile'){
+
+        this.device = 'desktop';
+
+        this.Glide.update();
+
+      }else if(window.innerWidth<768 && this.device==='desktop'){
+
+        this.device = 'mobile';
+
+        this.Glide.update()
+      }
+    },
+    // Glide dinamic fix
+    HtmlFix: function (Glide, Components, Events) {
+        const HtmlFix = Html(Glide, Components, Events);
+        this.Glide.on('update', () => {
+          HtmlFix.mount();
+        });
+      return HtmlFix;
+    }
   },
   mounted() {
+    if(window.innerWidth<=768){
+      this.device = 'mobile';
+    } else {
+      this.device = 'desktop';
+    }
+
+
     this.Glide = new Glide('.facts',{
       startAt: 0,
       perView: 1,
       focusAt: 'center'
     });
-    this.Glide.mount();
+    this.Glide.mount({Html: this.HtmlFix})
+
+
+    window.addEventListener("resize", this.UpdateSlider)
   }
 }
 
@@ -91,11 +130,11 @@ export default {
       cursor: pointer;
       &--left{
         left: 5%;
-        top: 50%;
+        top: 17%;
       }
       &--right{
         right: 5%;
-        top: 50%;
+        top: 17%;
         transform: rotate(180deg);
       }
     }
@@ -106,7 +145,11 @@ export default {
     grid-auto-columns: 1fr;
     padding: 0 12.6vw;
   }
+  .mobile_factoid{
+    display: none;
+  }
 }
+
 .factoidMORE{
   grid-auto-columns: 1fr 2fr;
 }
@@ -137,4 +180,27 @@ video{
     }
   }
 }
+
+
+@media (max-width: 768px) {
+  .desktop_factoid{
+    display: none;
+  }
+  .mobile_factoid{
+    display: grid;
+  }
+  .video_container{
+    padding: 0 5%;
+  }
+  .facts{
+    margin: 0;
+    .glide__arrows{
+      display: none;
+    }
+    .glide__slide{
+      padding: 0 5vw;
+    }
+  }
+}
+
 </style>

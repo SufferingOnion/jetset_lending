@@ -1,15 +1,15 @@
 <template>
-  <div>
-    <Vue-menu class="container"></Vue-menu>
+  <div id="main_container">
+    <Vue-menu/>
     <Vue-header></Vue-header>
-    <About-company class="container"></About-company>
-    <Vue-showreel class="container"></Vue-showreel>
-    <Vue-instagramm class="container"></Vue-instagramm>
-    <Vue-360 class="container"></Vue-360>
-    <Key-customers/>
-    <Reviews/>
-    <JetSet-crew></JetSet-crew>
-    <Footer></Footer>
+    <About-company id="about-company"></About-company>
+    <Vue-showreel id="showreel" class="container"></Vue-showreel>
+    <Vue-instagramm id="instagramm" class="container"></Vue-instagramm>
+    <Vue-360 id="360" class="container"></Vue-360>
+    <Key-customers id="customers" />
+    <Reviews id="reviews" />
+    <JetSet-crew id="crew" />
+    <Footer />
   </div>
 </template>
 
@@ -58,10 +58,11 @@ export default {
 </script>
 
 <style lang="scss">
+
 *{
   -webkit-font-smoothing: antialiased;
 }
-.body{
+.body,#main_container{
   overflow-x: hidden;
 }
 .logo_container{
@@ -70,7 +71,10 @@ export default {
   height: 100vh;
 }
 .container{
-  margin-bottom: 45px;
+
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto  45px;
 }
 
 </style>

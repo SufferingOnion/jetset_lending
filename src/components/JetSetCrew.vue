@@ -115,6 +115,96 @@ export default {
           sername: "Заика",
           position: "Senior Copywriter",
         },
+        {
+          name:"Павел",
+          sername: "Шкаровский",
+          position: "Event manager",
+        },
+        {
+          name:"Никита",
+          sername: "Никулин",
+          position: "Special Projects Manager",
+        },
+        {
+          name:"Анастасия",
+          sername: "Слепцова",
+          position: "Coordinator",
+        },
+        {
+          name:"Вероника",
+          sername: "Ульянич",
+          position: "Designer",
+        },
+        {
+          name:"Руслана",
+          sername: "Овчинникова",
+          position: "Lead Coordinator",
+        },
+        {
+          name:"Артем",
+          sername: "Быков",
+          position: "Logistics Manager",
+        },
+        {
+          name:"Екатерина",
+          sername: "Онофрийчук",
+          position: "Activation Technician",
+        },
+        {
+          name:"Владимир",
+          sername: "Ушаков",
+          position: "Executive Director",
+        },
+        {
+          name:"Владислав",
+          sername: "Мягченко",
+          position: "Tech Lead",
+        },
+        {
+          name:"Анастасия",
+          sername: "Матюшечко",
+          position: "Art Director",
+        },
+        {
+          name:"Михаил",
+          sername: "Булиткин",
+          position: "Production manager",
+        },
+        {
+          name:"Ксения",
+          sername: "Логинова",
+          position: "3D Designer",
+        },
+        {
+          name:"Карина",
+          sername: "Фролова",
+          position: "Account Manager",
+        },
+        {
+          name:"Сергей",
+          sername: "Сидоров",
+          position: "Senior Designer",
+        },
+        {
+          name:"Татьяна",
+          sername: "Маркова",
+          position: "Financial analyst",
+        },
+        {
+          name:"Елена",
+          sername: "Бортнева",
+          position: "Accountant",
+        },
+        {
+          name:"Дарья",
+          sername: "Мурашко",
+          position: "Designer",
+        },
+        {
+          name:"Ксения",
+          sername: "Тарасевич",
+          position: "Account Manager",
+        },
       ]
     }
   },

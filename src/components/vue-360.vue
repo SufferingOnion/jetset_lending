@@ -3,24 +3,56 @@
     <div ref="carousel" class="carousel" :style="{transform: 'rotateY('+this.currdeg+'deg)'}">
 <!--         :style="{transform: 'rotateY('+this.currdeg+'deg)'}">-->
           <div class="slide__item a">
-            <img src="../assets/img/communicatio1.png" alt="">
+            <img class="item_img" src="../assets/img/communication1.png" alt="">
+            <div class="item_header">
+              <h2 class="header_text">
+                ДИДЖИТАЛ<br>
+                ПРОДАКШН
+              </h2>
+            </div>
           </div>
           <div class="slide__item b">
-            <img src="../assets/img/communicatio2.png" alt="">
+            <img class="item_img" src="../assets/img/communication2.png" alt="">
+            <div class="item_header">
+              <h2 class="header_text">
+                ДИЗАЙН СТУДИЯ
+              </h2>
+            </div>
           </div>
           <div class="slide__item c">
-            <img src="../assets/img/communicatio3.png" alt="">
+            <img class="item_img" src="../assets/img/communication3.png" alt="">
+            <div class="item_header">
+              <h2 class="header_text">
+                SMM & CRM
+              </h2>
+            </div>
           </div>
           <div class="slide__item d">
-            <img src="../assets/img/communicatio1.png" alt="">
+            <img class="item_img" src="../assets/img/communication4.png" alt="">
+            <div class="item_header">
+              <h2 class="header_text">
+                ПРОИЗВОДСТВО
+              </h2>
+            </div>
           </div>
           <div class="slide__item e">
-            <img src="../assets/img/communicatio1.png" alt="">
+            <img class="item_img" src="../assets/img/communication5.png" alt="">
+            <div class="item_header">
+              <h2 class="header_text">
+                СТРАТЕГИИ
+              </h2>
+            </div>
           </div>
           <div class="slide__item f">
-            <img src="../assets/img/communicatio1.png" alt="">
+            <img class="item_img" src="../assets/img/communication6.png" alt="">
+            <div class="item_header">
+              <h2 class="header_text">
+                ИВЕНТ МАРКЕТИНГ
+              </h2>
+            </div>
           </div>
         </div>
+<!--    <div class="shadow"></div>-->
   </div>
 </template>
 
@@ -42,7 +74,7 @@ export default {
     Rotate(){
 
       if(this.pointerEndX-this.pointerStartX>this.pointerDist){
-        this.currdeg+=30;
+        this.currdeg+=60;
       }
       if(this.pointerEndX-this.pointerStartX<-this.pointerDist){
         this.currdeg+=-60;
@@ -98,6 +130,16 @@ export default {
   height: 36vw;
   position: relative;
   perspective: 200vw;
+  //.shadow{
+  //  position: absolute;
+  //  z-index: 10;
+  //  top: 0;
+  //  left: 0;
+  //  width: inherit;
+  //  height: inherit;
+  //  pointer-events: none;
+  //  background: linear-gradient(to right, rgba(0,0,0,.0) 13%, rgba(255,255,255,.6) 22%, rgba(0,0,0,.0) 26%, rgba(0,0,0,.0) 80%, rgba(255,255,255,.8) 85%, rgba(0,0,0,.0) 100%);
+  //}
 }
 .carousel {
   margin: 0 auto;
@@ -108,20 +150,39 @@ export default {
   position: absolute;
   transform-style: preserve-3d;
   transition: transform 2s;
+
 }
 
 .slide__item {
   display: block;
   position: absolute;
-  background: #000;
+  background: #000000;
   width: 49vw;
   height: 36vw;
-
   transform: scale(0.8);
-  img{
+  .item_img{
     width: 100%;
     user-select: none;
-
+  }
+  .item_header{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4vw;
+    .header_text{
+      font-weight: 500;
+      font-size: 40px;
+      line-height: 52px;
+      text-align: center;
+      letter-spacing: 0.1em;
+      color: #FFFFFF;
+      user-select: none;
+    }
   }
 }
 
@@ -150,4 +211,59 @@ export default {
   background: #8c6239;
 }
 
+@media (max-width: 1440px) {
+  .slide__item{
+    .item_header {
+      padding: 0 4vw;
+      .header_text {
+        font-size: 2.5vw;
+        line-height: 130%;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .communication{
+    height: 111vw;
+  }
+  .carousel {
+    height: 111vw;
+  }
+  .slide__item{
+    width: 64.3vw;
+    height: 111vw;
+    overflow: hidden;
+
+    .item_img{
+      width: auto;
+      height: 100%;
+      position: relative;
+      right: 67%;
+    }
+    .item_header {
+      padding: 0 4vw;
+      .header_text {
+        font-size: 4vw;
+      }
+    }
+  }
+  .a {
+    transform: rotateY(0deg) translateZ(50vw) scale(0.8);
+  }
+  .b {
+    transform: rotateY(60deg) translateZ(50vw) scale(0.8);
+  }
+  .c {
+    transform: rotateY(120deg) translateZ(50vw) scale(0.8);
+  }
+  .d {
+    transform: rotateY(180deg) translateZ(50vw) scale(0.8);
+  }
+  .e {
+    transform: rotateY(240deg) translateZ(50vw) scale(0.8);
+  }
+  .f {
+    transform: rotateY(300deg) translateZ(50vw) scale(0.8);
+  }
+}
 </style>

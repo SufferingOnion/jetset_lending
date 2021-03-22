@@ -1,8 +1,13 @@
+const path = require('path');
+
 module.exports = {
-  css: {
-    sourceMap: true
-  },
   outputDir: 'docs',
   publicPath: '/jetset_lending/',
-  runtimeCompiler: true
+  productionSourceMap: false,
+  pluginOptions: {
+    dll: {
+      entry: ['vue', 'vue-router'],
+      cacheFilePath: path.resolve(__dirname, './public')
+    }
+  }
 }

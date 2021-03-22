@@ -54,12 +54,12 @@ export default {
   &:nth-child(n+2):before{
     display: block;
     content: '';
-    border: 1px solid #000000;
-    width: 0;
+    background: #000000;
+    width: 1px;
     height: 70px;
     position: absolute;
     left: 0;
-    top: calc(20%);
+    top: calc(10%);
   }
   .factoid_text {
     font-size: 60px;
@@ -75,6 +75,43 @@ export default {
     line-height: 31px;
     text-transform: uppercase;
     color: #150F0F;
+  }
+}
+@media (max-width: 1440px) {
+  .counter{
+    .factoid_text {
+      font-size: 45px;
+      line-height: 1.3em;
+    }
+    .descr{
+      font-size: 16px;
+      line-height: 1.3em;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .counter{
+    .factoid_text {
+      font-size: 30px;
+      line-height: 1.3em;
+    }
+    .descr{
+      font-size: 12px;
+      line-height: 1.3em;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .counter{
+
+    .factoid_text {
+      font-size: 22px;
+      line-height: 1.3em;
+    }
+    .descr{
+      font-size: 8px;
+      line-height: 1.3em;
+    }
   }
 }
 
