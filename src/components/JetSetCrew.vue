@@ -1,6 +1,6 @@
 <template>
   <div class="crew-wrapper">
-    <Block-header>ОТЗЫВЫ</Block-header>
+    <Block-header>КОМАНДА</Block-header>
     <div class="crew">
       <div class="glide__track" data-glide-el="track">
         <div class="glide__slides">
@@ -8,7 +8,6 @@
             <div class="member_container">
               <img class="member"
                    :src="require(`../assets/img/crew/${member.name + ' ' + member.sername}.jpg`)"
-                   :style="{width: 'calc(23.8125vw - 20px)'}"
               >
               <div class="details">
                 <h2 class="header_text member-name">
@@ -216,7 +215,18 @@ export default {
       startAt: 1,
       perView: 4,
       focusAt: 'center',
-      gap: 28
+      gap: 28,
+      breakpoints: {
+        768: {
+          gap: 10,
+        },
+        425: {
+          startAt: 0,
+          perView: 1,
+          focusAt: 'center',
+          gap: 0,
+        },
+      }
     });
     this.Glide.mount();
   }
@@ -239,7 +249,9 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-
+      .member{
+        width: 100%;
+      }
       .details{
         position: absolute;
         bottom: 0;
@@ -275,4 +287,63 @@ export default {
   }
 }
 
+@media (max-width: 1200px) {
+  .crew{
+    .glide__slide{
+      .member_container{
+        .details{
+          .member-name{
+            font-size: 1.5vw;
+            line-height: 1.94vw;
+          }
+          .member-position{
+            font-size: 1.125vw;
+            line-height: 1.68vw;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .crew{
+    .glide__slide{
+      .member_container{
+        .details{
+          .member-name{
+            font-size: 2.08vw;
+            line-height: 2.6vw;
+          }
+          .member-position{
+            font-size: 1.56vw;
+            line-height: 2.34vw;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  .crew{
+    .glide__slide{
+      .member_container{
+        width: 100%;
+        padding: 0 14.6vw;
+        .member{
+          width: 100%;
+        }
+        .details{
+          .member-name{
+            font-size: 16px;
+            line-height: 20px;
+          }
+          .member-position{
+            font-size: 12px;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+  }
+}
 </style>

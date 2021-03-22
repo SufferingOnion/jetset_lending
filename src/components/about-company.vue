@@ -60,14 +60,16 @@ export default {
 <style lang="scss">
 .about-company {
   width: 100%;
+
   margin: 0 auto;
 
 
   #about_scene {
     position: relative;
     width: 100%;
-    height: 60vh;
-    min-height: 617px;
+    //height: 60vh;
+    //max-height: 640px;
+    height: 617px;
 display: flex;
     justify-content: center;
     align-items: center;
@@ -231,6 +233,7 @@ display: flex;
   }
   .denis_popov-ceo{
     bottom: 20%;
+    right: 7.6%;
   }
 }
 @media (max-width: 768px) {
@@ -257,7 +260,7 @@ display: flex;
     }
   }
   .denis_popov-ceo{
-    bottom: 29%;
+    bottom: 32%;
     right: -9%;
     .ceo{
       width: 120%;
@@ -282,7 +285,7 @@ display: flex;
 @media (max-width: 430px) {
   .denis_popov-ceo{
     right: -27%;
-    bottom: 24%;
+    bottom: 28%;
   }
 }
 @media (max-width: 340px) {
@@ -291,7 +294,7 @@ display: flex;
     top: -6%;
   }
   .denis_popov-ceo{
-    bottom: 24%;
+    bottom: 32%;
     right: -39%;
     .denis_popov-img {
       min-width: 427px;

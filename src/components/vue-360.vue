@@ -72,7 +72,7 @@ export default {
   },
   methods: {
     Rotate(){
-
+      console.log(this.pointerEndX)
       if(this.pointerEndX-this.pointerStartX>this.pointerDist){
         this.currdeg+=60;
       }
@@ -102,13 +102,13 @@ export default {
     // }
   },
   mounted() {
-    this.$refs.carousel.addEventListener('pointerdown', (event) => {
+    this.$refs.carousel.addEventListener('mousedown', (event) => {
       event.preventDefault();
       this.pointerStartX = event.x;
       // this.isDragging = true;
     });
     // this.$refs.carousel.addEventListener('pointermove', this.Rotate);
-    this.$refs.carousel.addEventListener('pointerup', (event) => {
+    this.$refs.carousel.addEventListener('mouseup', (event) => {
       this.pointerEndX = event.x;
       // this.isDragging = false;
       this.Rotate()
@@ -116,6 +116,20 @@ export default {
     // this.$refs.carousel.addEventListener('pointerleave', () => {
     //   this.isDragging = false;
     // });
+    this.$refs.carousel.addEventListener('touchstart', (event) => {
+      event.preventDefault();
+      console.log(event)
+      this.pointerStartX = event.touches[0].clientX;
+
+
+    });
+    this.$refs.carousel.addEventListener('touchmove', (event) => {
+      this.pointerEndX = event.touches[0].clientX;
+    });
+    this.$refs.carousel.addEventListener('touchend', (event) => {
+      console.log(event)
+      this.Rotate()
+    });
   }
 }
 
@@ -188,27 +202,21 @@ export default {
 
 .a {
   transform: rotateY(0deg) translateZ(36vw) scale(0.8);
-  background: #ed1c24;
 }
 .b {
   transform: rotateY(60deg) translateZ(36vw) scale(0.8);
-  background: #0072bc;
 }
 .c {
   transform: rotateY(120deg) translateZ(36vw) scale(0.8);
-  background: #39b54a;
 }
 .d {
   transform: rotateY(180deg) translateZ(36vw) scale(0.8);
-  background: #f26522;
 }
 .e {
   transform: rotateY(240deg) translateZ(36vw) scale(0.8);
-  background: #630460;
 }
 .f {
   transform: rotateY(300deg) translateZ(36vw) scale(0.8);
-  background: #8c6239;
 }
 
 @media (max-width: 1440px) {

@@ -5,7 +5,7 @@
     <About-company id="about-company"></About-company>
     <Vue-showreel id="showreel" class="container"></Vue-showreel>
     <Vue-instagramm id="instagramm" class="container"></Vue-instagramm>
-    <Vue-360 id="360" class="container"></Vue-360>
+    <Vue-360 id="360"></Vue-360>
     <Key-customers id="customers" />
     <Reviews id="reviews" />
     <JetSet-crew id="crew" />

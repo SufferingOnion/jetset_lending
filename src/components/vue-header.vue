@@ -51,4 +51,37 @@ export default {
   height: 70px;
   background: url("~@/assets/icons/scroll.svg");
 }
+@media (max-width: 768px) {
+  .company_name{
+    right: 0.78%;
+    &__name{
+      font-size: 60px;
+      line-height: 70px;
+      margin: 0;
+    }
+    &__description{
+      font-size: 18px;
+      line-height: 28px;
+      margin: 0;
+    }
+  }
+  .scroll_down{
+    display: none;
+  }
+}
+@media (max-width: 530px) {
+  .company_name{
+    right: 6px;
+    &__name{
+      font-size: 40px;
+      line-height: 48px;
+      margin: 0;
+    }
+    &__description{
+      font-size: 12px;
+      line-height: 18px;
+      margin: 0;
+    }
+  }
+}
 </style>

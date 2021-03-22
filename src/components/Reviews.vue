@@ -32,7 +32,8 @@ export default {
   },
   data(){
     return{
-      Glide: null,
+      vueGlide: null,
+
       reviews:[
         {
           img:"opumis",
@@ -75,16 +76,31 @@ export default {
               "at Philip Morris International",
           review: 'JetSet transcends beyond being a good agency or business partner, they go on the journey with you.  In every step of this journey, you feel personal touch, involvement, ownership and comforting presence ensuring you that it won’t just be ok, but beyond your expectations. Together we did numerous successful launches, but 2020 was probably our best collective work ever.'
         }
-      ]
+      ],
     }
   },
+  methods: {
+
+  },
   mounted() {
-    this.Glide = new Glide('.reviews',{
+
+
+    this.vueGlide = new Glide('.reviews',{
       startAt: 0,
-      perView: 1,
-      focusAt: 'center'
+      perView: 1.2,
+      focusAt: 0.1,
+      gap: 45,
+      breakpoints: {
+        768: {
+          perView: 1,
+          focusAt: 'center',
+          gap: 30,
+        }
+      }
     });
-    this.Glide.mount();
+
+    this.vueGlide.mount();
+
   }
 }
 </script>
@@ -104,17 +120,16 @@ export default {
     top: 0;
   }
 }
-
+.glide__slides{
+  align-items: stretch;
+}
 .reviews{
   position: relative;
   z-index: 1;
   width: 100%;
-  .glide__track{
-
-  }
   .glide__slide{
-    width: 100%;
-    padding: 30px 12.6vw;
+    width: 74.8vw;
+    height: auto;
     display: flex;
     .logo_container-review{
         position: relative;
@@ -166,6 +181,108 @@ export default {
         font-size: 18px;
         line-height: 27px;
         color: #150F0F;
+      }
+    }
+  }
+}
+@media (max-width: 1365px) {
+  .reviews {
+    .glide__slide {
+      width: 80vw;
+      padding: 0 4.68vw;
+      flex-flow: column nowrap;
+      .logo_container-review {
+        overflow: hidden;
+        position: relative;
+
+        display: flex;
+        flex: none;
+        max-height: 200px;
+        //padding: 37.14%;
+        justify-content: flex-start;
+        align-items: center;
+        background: #1C2CDD;
+        transition: background-color 0.2s ease;
+
+        .logo {
+          position: relative;
+          width: 60%;
+        }
+
+        .logo-hover {
+          position: absolute;
+          width: 60%;
+          z-index: 2;
+          opacity: 0;
+          transition: opacity 0.2s ease;
+        }
+
+        &:hover {
+          background: #ffffff;
+
+          .logo-hover {
+            opacity: 1;
+          }
+        }
+      }
+
+      .review {
+        flex: 70% 2 1;
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 40px 8.125vw;
+        background-color: #ffffff;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+
+        p {
+          margin: 0;
+        }
+
+        .reviewer_name {
+          font-size: 24px;
+          line-height: 31px;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+        }
+
+        .reviewer_position {
+          font-size: 18px;
+          line-height: 27px;
+          margin: 10px 0 24px;
+        }
+
+        .reviewer_review {
+          font-size: 18px;
+          line-height: 27px;
+          color: #150F0F;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .reviews {
+    .glide__slide {
+      .review {
+
+        padding: 34px 8.125vw;
+        p {
+          margin: 0;
+        }
+        .reviewer_name {
+          font-size: 16px;
+          line-height: 20px;
+        }
+        .reviewer_position {
+          font-size: 10px;
+          line-height: 15px;
+          margin: 8px 0 31px;
+        }
+        .reviewer_review {
+          font-size: 14px;
+          line-height: 20px;
+
+        }
       }
     }
   }
