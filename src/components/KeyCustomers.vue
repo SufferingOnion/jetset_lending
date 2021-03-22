@@ -1,28 +1,10 @@
 <template>
   <div class="customers-wrapper">
     <Block-header>КЛЮЧЕВЫЕ<br>КЛИЕНТЫ</Block-header>
-    <div v-if="this.device==='desktop'" class="customers">
+    <div class="customers">
       <div v-for="(i, index) in customer" :key="index" class="icon_container">
         <img class="icon" loading="lazy" :src="require(`../assets/img/customers/${i}.png`)">
         <img class="icon-hover" loading="lazy" :src="require(`../assets/img/customers/${i}-hover.png`)" >
-      </div>
-    </div>
-    <div v-show="this.device==='mobile'" class="customers_slider ">
-      <div class="glide__track" data-glide-el="track">
-        <div class="glide__slides">
-          <div class="glide__slide">
-            <div v-for="(i, index) in customers_mobile_first" :key="index" class="icon_container">
-              <img class="icon" loading="lazy" :src="require(`../assets/img/customers/${i}.png`)">
-              <img class="icon-hover" loading="lazy" :src="require(`../assets/img/customers/${i}-hover.png`)" >
-            </div>
-          </div>
-          <div class="glide__slide">
-            <div v-for="(i, index) in customers_mobile_second" :key="index" class="icon_container">
-              <img class="icon" loading="lazy" :src="require(`../assets/img/customers/${i}.png`)">
-              <img class="icon-hover" loading="lazy" :src="require(`../assets/img/customers/${i}-hover.png`)" >
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -30,7 +12,6 @@
 
 <script>
 import BlockHeader from "@/components/block-header";
-import Glide from '@glidejs/glide'
 
 export default {
   components: {
@@ -53,60 +34,12 @@ export default {
           'dog',
           'rosoez',
       ],
-      customers_mobile_first:[
-          'lujniki',
-          'iqos',
-          'pm',
-          'psb',
-          'moscow',
-          'gas',
-          'tess',
-          'greenfield',
-      ],
-      customers_mobile_second:[
-        'jardin',
-        'esquire',
-        'lukoil',
-        'dog',
-        'rosoez',
-      ],
-      Glide: null,
-      device: ''
     }
   },
   methods: {
-    initSlider: function (){
-      console.log(window.innerWidth)
-      if(window.innerWidth>1300 && this.device==='mobile'){
-        this.device = 'desktop';
-        this.Glide.destroy();
-      }else if(window.innerWidth<1300 && this.device==='desktop'){
-        this.device = 'mobile';
-        this.Glide = new Glide('.customers_slider',{
-          startAt: 0,
-          perView: 1,
-          focusAt: 'center'
-        });
-        this.Glide.mount()
-      }
-    }
+
   },
-  mounted() {
 
-    if(window.innerWidth<=1300){
-      this.device = 'mobile';
-      this.Glide = new Glide('.customers_slider',{
-        startAt: 0,
-        perView: 1,
-        focusAt: 'center'
-      });
-      this.Glide.mount();
-    } else {
-      this.device = 'desktop';
-    }
-
-    window.addEventListener("resize", this.initSlider)
-  }
 }
 </script>
 
@@ -119,13 +52,17 @@ export default {
     display: flex;
     margin: 1.55vw;
     width: 12.25vw;
+    min-width: 70px;
+    max-width: 190px;
     height: 7.3125vw;
     justify-content: center;
     align-items: center;
     .icon{
       position: absolute;
+      width: 100%;
     }
     .icon-hover{
+      width: 100%;
       position: absolute;
       z-index: 2;
       opacity: 0;
@@ -142,7 +79,10 @@ export default {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-auto-flow: row;
-  grid-template-rows: repeat(3, 1fr);
+  grid-auto-rows: 12.25vw;
+  .icon_container{
+    justify-self: center;
+  }
   .icon_container:nth-child(13){
     grid-column: span 2;
     justify-self: start;
@@ -153,17 +93,7 @@ export default {
 
   }
 }
-.customers_slider{
-  position: relative;
-  .glide__slide{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    .icon_container:last-child{
-      grid-column: span 2;
-      justify-self: start;
-    }
-  }
-}
+
 
 @media (max-width: 1440px) {
   .customers-wrapper{
@@ -180,8 +110,111 @@ export default {
     padding: 0 8.125%;
     .icon_container{
       margin: 2.55vw;
-      width: 8.16vw;
+      width: 9vw;
       height: 4.875vw;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .customers-wrapper{
+    padding: 0 8.125%;
+    .icon_container{
+      margin: 2.55vw;
+      width: 10vw;
+      height: 4.875vw;
+    }
+  }
+  .customers{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: row;
+
+    .icon_container:last-child{
+      grid-column: span 4;
+      justify-self: center;
+    }
+    .icon_container:nth-child(11){
+      grid-column: span 1;
+      justify-self: center;
+
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .customers-wrapper{
+    padding: 0 8.125%;
+    .icon_container{
+      margin: 2.55vw;
+      width: 14vw;
+      height: 4.875vw;
+    }
+  }
+  .customers{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: row;
+    grid-auto-rows: 18vw;
+
+    .icon_container:last-child{
+      grid-column: span 3;
+      justify-self: center;
+    }
+    .icon_container:nth-child(11){
+      grid-column: span 1;
+      justify-self: center;
+
+    }
+  }
+}
+@media (max-width: 700px) {
+  .customers-wrapper{
+    padding: 0 20px;
+    .icon_container{
+      margin: 2.55vw;
+      width: 18vw;
+      height: 18vw;
+    }
+  }
+  .customers{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row;
+    grid-auto-rows: 24vw;
+
+    .icon_container:last-child{
+      grid-column: span 2;
+      justify-self: center;
+    }
+    .icon_container:nth-child(11){
+      grid-column: span 1;
+      justify-self: center;
+
+    }
+  }
+}
+@media (max-width: 425px) {
+  .customers-wrapper{
+    padding: 0 20px;
+    .icon_container{
+      margin: 2.55vw;
+      width: 22.5vw;
+      height: 22.5vw;
+    }
+  }
+  .customers{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row;
+    grid-auto-rows: 30vw;
+
+    .icon_container:last-child{
+      grid-column: span 2;
+      justify-self: center;
+    }
+    .icon_container:nth-child(11){
+      grid-column: span 1;
+      justify-self: center;
+
     }
   }
 }
