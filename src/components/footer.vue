@@ -159,22 +159,29 @@ export default {
     &_logo{
       grid-column: span 2;
       display: block;
-      background: url("../assets/icons/logo.svg") center no-repeat;
+      mask: url("../assets/icons/logo.svg") center no-repeat;
       width: 71px;
       height: 71px;
-
     }
     &_fb{
       display: block;
-      background: url("../assets/icons/facebook.svg") center no-repeat;
+      mask: url("../assets/icons/facebook.svg") center no-repeat;
       width: 71px;
       height: 71px;
     }
     &_insta{
       display: block;
-      background: url("../assets/icons/instagram.svg") center no-repeat;
+      mask: url("../assets/icons/instagram.svg") center no-repeat;
       width: 71px;
       height: 71px;
+    }
+    &_logo, &_fb, &_insta{
+      cursor: pointer;
+      background-color: #1E30F4;
+      transition: background-color 0.2s ease-in-out;
+    }
+    &_logo:hover, &_fb:hover, &_insta:hover{
+      background-color: #FFFFFF;
     }
   }
 }

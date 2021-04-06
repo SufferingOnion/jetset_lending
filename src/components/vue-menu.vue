@@ -1,14 +1,14 @@
-<template>
-  <transition name="show-header">
+<template >
+  <transition name="show-header" >
     <div  v-show="headerVisibility" ref="vueHeader" class="menu">
-      <div class="menu-header">
+      <div class="menu-header" :style="smartMenu">
         <div class="lang">
           <span class="blue_text active_lang">RU</span>
           <span class="blue_text active_lang separator">|</span>
           <span class="blue_text disable_lang">EN</span>
         </div>
         <div class="menu_icon">
-          <svg class="ham hamRotate ham8" viewBox="0 0 100 100" @click="menuActive=!menuActive" :class="{ active: menuActive }">
+          <svg class="ham hamRotate ham8" viewBox="0 0 100 100"  @click="menuActive=!menuActive" :class="{ active: menuActive }">
             <path
                 class="line top"
                 d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
@@ -22,7 +22,7 @@
         </div>
       </div>
       <transition name="show-menu">
-        <div  v-show="menuActive" class="menu-container" :class="{'menu-active': menuActive}">
+        <div  v-show="menuActive" class="menu-container" :class="{'menu-active': menuActive}" @click="menuActive=!menuActive">
           <a class="blue_text menu-link" href="#about-company">О НАС</a>
           <a class="blue_text menu-link" href="#showreel">SHOWREEL</a>
           <a class="blue_text menu-link" href="#instagramm">НАШ INSTAGRAM</a>
@@ -46,9 +46,25 @@ export default {
       headerVisibility: true,
     }
   },
+  computed: {
+    smartMenu(){
+      if(this.scrollY >= 300){
+        return {
+          backgroundColor: '#ffffff',
+        }
+      } else {
+        return {}
+      }
+    }
+  },
   methods: {
+    closeMenu(e){
+      if (e.code === 'Escape') {
+        this.menuActive=false;
+      }
+    },
     changeVisibility(){
-      if(window.scrollY>100 && window.scrollY > this.scrollY){
+      if(window.scrollY>0 && window.scrollY > this.scrollY){
         this.headerVisibility = false;
         this.menuActive = false;
       }else{
@@ -58,6 +74,7 @@ export default {
     }
   },
   mounted() {
+    document.addEventListener('keydown', this.closeMenu);
     document.addEventListener('scroll', this.changeVisibility);
     const anchors = document.querySelectorAll('a[href*="#"]')
 
@@ -104,10 +121,11 @@ export default {
     width: 100%;
     height: 112px;
     padding: 0 5.25% 0 12.6%;
-    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: transparent;
+    transition: background-color .3s ease;
   }
 }
 

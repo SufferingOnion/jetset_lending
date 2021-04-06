@@ -61,7 +61,7 @@ export default {
 .about-company {
   width: 100%;
 
-  margin: 0 auto;
+  margin: 150px auto 0;
 
 
   #about_scene {

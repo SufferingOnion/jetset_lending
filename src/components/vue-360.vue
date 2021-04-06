@@ -53,6 +53,10 @@
           </div>
         </div>
 <!--    <div class="shadow"></div>-->
+    <div class="carousel__arrows">
+      <button class="carousel__arrow carousel__arrow--left" @click="currdeg+=60"></button>
+      <button class="carousel__arrow carousel__arrow--right" @click="currdeg+=-60"></button>
+    </div>
   </div>
 </template>
 
@@ -136,7 +140,32 @@ export default {
 </script>
 
 <style lang="scss">
-
+.carousel__arrows{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: calc(50%);
+  .carousel__arrow{
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    background: url("~@/assets/icons/arrow.svg") center no-repeat;
+    background-size: contain;
+    border: 0;
+    cursor: pointer;
+    &--left{
+      left: 3%;
+      top: 17%;
+    }
+    &--right{
+      right: 3%;
+      top: 17%;
+      transform: rotate(180deg);
+    }
+  }
+}
 .communication{
   margin: 96px 0;
   box-sizing: border-box;

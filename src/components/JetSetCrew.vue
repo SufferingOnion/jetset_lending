@@ -55,16 +55,6 @@ export default {
           position: "Key Account Director",
         },
         {
-          name:"Инна",
-          sername: "Сидорова",
-          position: "Account manager",
-        },
-        {
-          name:"Анна",
-          sername: "Пузырева",
-          position: "Account manager",
-        },
-        {
           name:"Петр",
           sername: "Мартынов",
           position: "Moscow Regional Director",
@@ -75,14 +65,19 @@ export default {
           position: "Production director",
         },
         {
-          name:"Владимир",
-          sername: "Дмитриев",
-          position: "Senior production manager",
+          name:"Антон",
+          sername: "Шипицын",
+          position: "Event director",
         },
         {
-          name:"Антон",
-          sername: "ШипицыН",
-          position: "Event director",
+          name:"Михаил",
+          sername: "Суворов",
+          position: "Art director",
+        },
+        {
+          name:"Владимир",
+          sername: "Ушаков",
+          position: "Executive Director",
         },
         {
           name:"Алексей",
@@ -90,9 +85,54 @@ export default {
           position: "Project producer",
         },
         {
+          name:"Инна",
+          sername: "Сидорова",
+          position: "Account manager",
+        },
+        {
+          name:"Анна",
+          sername: "Пузырева",
+          position: "Account manager",
+        },
+        {
+          name:"Карина",
+          sername: "Фролова",
+          position: "Account Manager",
+        },
+        {
+          name:"Ксения",
+          sername: "Тарасевич",
+          position: "Account Manager",
+        },
+        {
+          name:"Никита",
+          sername: "Никулин",
+          position: "Special Projects Manager",
+        },
+        {
+          name:"Владимир",
+          sername: "Дмитриев",
+          position: "Senior production manager",
+        },
+        {
+          name:"Артем",
+          sername: "Быков",
+          position: "Logistics Manager",
+        },
+        {
           name:"Михаил",
-          sername: "Суворов",
-          position: "Art director",
+          sername: "Булиткин",
+          position: "Production manager",
+        },
+        {
+          name:"Екатерина",
+          sername: "Онофрийчук",
+          position: "Activation Technician",
+        },
+        {
+          name:"Ксения",
+          sername: "Логинова",
+          position: "3D Designer",
         },
         {
           name:"Сергей",
@@ -103,6 +143,31 @@ export default {
           name:"Екатерина",
           sername: "Землякова",
           position: "Art director",
+        },
+        {
+          name:"Анастасия",
+          sername: "Матюшечко",
+          position: "Art Director",
+        },
+        {
+          name:"Сергей",
+          sername: "Сидоров",
+          position: "Senior Designer",
+        },
+        {
+          name:"Дарья",
+          sername: "Мурашко",
+          position: "Designer",
+        },
+        {
+          name:"Вероника",
+          sername: "Ульянич",
+          position: "Designer",
+        },
+        {
+          name:"Владислав",
+          sername: "Мягченко",
+          position: "Tech Lead",
         },
         {
           name:"Дмитрий",
@@ -120,69 +185,14 @@ export default {
           position: "Event manager",
         },
         {
-          name:"Никита",
-          sername: "Никулин",
-          position: "Special Projects Manager",
-        },
-        {
-          name:"Анастасия",
-          sername: "Слепцова",
-          position: "Coordinator",
-        },
-        {
-          name:"Вероника",
-          sername: "Ульянич",
-          position: "Designer",
-        },
-        {
           name:"Руслана",
           sername: "Овчинникова",
           position: "Lead Coordinator",
         },
         {
-          name:"Артем",
-          sername: "Быков",
-          position: "Logistics Manager",
-        },
-        {
-          name:"Екатерина",
-          sername: "Онофрийчук",
-          position: "Activation Technician",
-        },
-        {
-          name:"Владимир",
-          sername: "Ушаков",
-          position: "Executive Director",
-        },
-        {
-          name:"Владислав",
-          sername: "Мягченко",
-          position: "Tech Lead",
-        },
-        {
           name:"Анастасия",
-          sername: "Матюшечко",
-          position: "Art Director",
-        },
-        {
-          name:"Михаил",
-          sername: "Булиткин",
-          position: "Production manager",
-        },
-        {
-          name:"Ксения",
-          sername: "Логинова",
-          position: "3D Designer",
-        },
-        {
-          name:"Карина",
-          sername: "Фролова",
-          position: "Account Manager",
-        },
-        {
-          name:"Сергей",
-          sername: "Сидоров",
-          position: "Senior Designer",
+          sername: "Слепцова",
+          position: "Coordinator",
         },
         {
           name:"Татьяна",
@@ -193,16 +203,6 @@ export default {
           name:"Елена",
           sername: "Бортнева",
           position: "Accountant",
-        },
-        {
-          name:"Дарья",
-          sername: "Мурашко",
-          position: "Designer",
-        },
-        {
-          name:"Ксения",
-          sername: "Тарасевич",
-          position: "Account Manager",
         },
       ]
     }
@@ -340,6 +340,7 @@ export default {
           .member-position{
             font-size: 12px;
             line-height: 18px;
+            letter-spacing: 1px;
           }
         }
       }

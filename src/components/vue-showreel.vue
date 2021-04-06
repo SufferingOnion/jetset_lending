@@ -1,6 +1,5 @@
 <template>
   <div class="showreel">
-    <Block-header>SHOWREEL</Block-header>
     <div class="video_container">
       <video @click="PlayVideo" ref="video" src="https://jetsetholding.world/wp-content/uploads/2020/07/video.mp4" width="100%"></video>
       <div v-if="!isPlaying" @click="PlayVideo" class="video_play">
@@ -34,14 +33,12 @@
 </template>
 
 <script>
-import BlockHeader from './block-header'
 import Glide from '@glidejs/glide'
 import Html from '@glidejs/glide/src/components/html';
 import counter from "@/components/counter";
 
 export default {
   components: {
-    "Block-header": BlockHeader,
     "Vue-counter": counter,
   },
   data(){
@@ -111,12 +108,16 @@ export default {
 <style lang="scss">
 
 .showreel{
-  margin: 96px 0;
+  margin: 150px auto 96px;
+
+  max-width: 1920px;
+  width: 100%;
+
 }
 
 .facts{
   position: relative;
-  margin-bottom: 150px;
+  margin: 75px 0 150px;
   .glide__arrows{
     .glide__arrow{
       display: block;

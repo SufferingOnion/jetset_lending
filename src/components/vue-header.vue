@@ -5,7 +5,7 @@
       <h1 class="header_text company_name__name">JETSET</h1>
       <h2 class="blue_text company_name__description">агентство реактивного цикла </h2>
     </div>
-    <div class="scroll_down"></div>
+    <a href="#about-company" class="scroll_down" @click="scrollDown"></a>
   </div>
 </template>
 
@@ -15,6 +15,11 @@ export default {
 
   components: {
     "three-model": threeModel,
+  },
+  methods:{
+    scrollDown(){
+
+    }
   }
 }
 </script>
@@ -27,9 +32,12 @@ export default {
 }
 
 .company_name{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
   height: 200px;
   position: absolute;
-  top: 70%;
+  top: 60%;
   right: 11.5%;
   z-index: 10;
   &__name{
@@ -41,17 +49,18 @@ export default {
     font-size: 28px;
     line-height: 42px;
     margin: 0;
+    letter-spacing: 0.1em;
   }
 }
 .scroll_down{
   position: absolute;
   left: calc(50% - 14.5px);
-  bottom: 10%;
+  bottom: 0%;
   width: 29px;
   height: 70px;
   background: url("~@/assets/icons/scroll.svg");
 }
-@media (max-width: 768px) {
+@media (max-width: 1440px) {
   .company_name{
     right: 0.78%;
     &__name{
@@ -64,6 +73,19 @@ export default {
       line-height: 28px;
       margin: 0;
     }
+  }
+}
+@media (max-width: 1000px) {
+  .company_name{
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 768px) {
+  .header{
+    height: 90vh;
+  }
+  .company_name{
+    top: 74%;
   }
   .scroll_down{
     display: none;

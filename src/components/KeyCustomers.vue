@@ -51,15 +51,17 @@ export default {
     position: relative;
     display: flex;
     margin: 1.55vw;
-    width: 12.25vw;
-    min-width: 70px;
-    max-width: 190px;
-    height: 7.3125vw;
+    //width: 12.25vw;
+    //min-width: 70px;
+    //max-width: 190px;
+    //height: 7.3125vw;
+    width: auto;
+    height: auto;
     justify-content: center;
     align-items: center;
     .icon{
       position: absolute;
-      width: 100%;
+
     }
     .icon-hover{
       width: 100%;
@@ -84,12 +86,12 @@ export default {
     justify-self: center;
   }
   .icon_container:nth-child(13){
-    grid-column: span 2;
-    justify-self: start;
+    grid-column: 4/5;
+    justify-self: center;
   }
   .icon_container:nth-child(11){
-    grid-column: span 2;
-    justify-self: end;
+    grid-column: 2/3;
+    justify-self: center;
 
   }
 }
