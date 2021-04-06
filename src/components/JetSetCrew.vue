@@ -245,7 +245,8 @@ export default {
     width: min-content;
     display: flex;
     .member_container{
-        position: relative;
+      width: 100%;
+      position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
