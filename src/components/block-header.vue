@@ -20,6 +20,7 @@
   color: #1E30F4;
   text-align: center;
   letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 @media (max-width: 1024px) {
   .block-header{

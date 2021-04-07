@@ -125,7 +125,7 @@ export default {
       // BACKGROUND
 
       this.scene.background = new THREE.Color(0xffffff);
-      window.addEventListener('mousemove', this.onDocumentMouseMove);
+      window.addEventListener('mousemove', this.onDocumentMouseMove,{ passive: true });
 
       //ENVIRONMENT
       const pmremGenerator = new THREE.PMREMGenerator( this.renderer );

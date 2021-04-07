@@ -107,33 +107,29 @@ export default {
   },
   mounted() {
     this.$refs.carousel.addEventListener('mousedown', (event) => {
-      event.preventDefault();
       this.pointerStartX = event.x;
       // this.isDragging = true;
-    });
+    },{ passive: true });
     // this.$refs.carousel.addEventListener('pointermove', this.Rotate);
     this.$refs.carousel.addEventListener('mouseup', (event) => {
       this.pointerEndX = event.x;
       // this.isDragging = false;
       this.Rotate()
-    });
+    },{ passive: true });
     // this.$refs.carousel.addEventListener('pointerleave', () => {
     //   this.isDragging = false;
     // });
     this.$refs.carousel.addEventListener('touchstart', (event) => {
-      event.preventDefault();
       console.log(event)
       this.pointerStartX = event.touches[0].clientX;
-
-
-    });
+    },{ passive: true });
     this.$refs.carousel.addEventListener('touchmove', (event) => {
       this.pointerEndX = event.touches[0].clientX;
-    });
+    },{ passive: true });
     this.$refs.carousel.addEventListener('touchend', (event) => {
       console.log(event)
       this.Rotate()
-    });
+    },{ passive: true });
   }
 }
 

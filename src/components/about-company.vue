@@ -21,9 +21,13 @@
       </div>
       <div class="about-company-text">
         <p class="blue_text text">
-          Мы – <span class="blue_text">JETSET</span>. Коммуникационное агентство,
-          объединяющих более полусотни профессионалов с 20 летним опытом работы для создания и продвижения торговых марок, мировых брендов
-          и ваших идей.
+          Уже 20 лет мы успешно оправдываем своё название - <span class="blue_text">JetSet</span>,
+          агентство реактивного цикла. Ведь мы думаем
+          и творим на сверхзвуковых скоростях.
+          Наша профессиональная команда, включающая
+          более 50 человек, реактивно создаёт самые
+          невероятные проекты, продвигает бренды
+          и воплощает идеи любой сложности.
         </p>
       </div>
       <svg class="svgPolygon svgCircle" data-depth="0.5" width="131" height="131" viewBox="0 0 131 131" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +64,7 @@ export default {
 <style lang="scss">
 .about-company {
   width: 100%;
-
+  max-height: 550px;
   margin: 150px auto 0;
 
 
@@ -210,9 +214,9 @@ display: flex;
   width: 100%;
   min-width: 1221px;
   max-width: 1423px;
-  height: 791px;
+  height: 100%;
   background: url("~@/assets/img/about_main_background.png") no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 
 @media (max-width: 1440px) {
@@ -227,7 +231,10 @@ display: flex;
   }
 }
 @media (max-width: 1024px) {
-  .about-company-text{
+  .main_back {
+  height: 791px;
+  }
+    .about-company-text{
     top: -4%;
     left: 8%;
   }
@@ -241,7 +248,7 @@ display: flex;
     display: none;
   }
   .denis_popov-ceo{
-
+    bottom: 10%;
   }
 }
 @media (max-width: 570px) {
@@ -260,7 +267,7 @@ display: flex;
     }
   }
   .denis_popov-ceo{
-    bottom: 32%;
+    bottom: 20%;
     right: -9%;
     .ceo{
       width: 120%;
@@ -284,8 +291,14 @@ display: flex;
 }
 @media (max-width: 430px) {
   .denis_popov-ceo{
-    right: -27%;
-    bottom: 28%;
+    right: -20%;
+    bottom: 20%;
+  }
+}
+@media (max-width: 375px) {
+  .denis_popov-ceo{
+    right: -30%;
+    bottom: 20%;
   }
 }
 @media (max-width: 340px) {
@@ -294,8 +307,8 @@ display: flex;
     top: -6%;
   }
   .denis_popov-ceo{
-    bottom: 32%;
-    right: -39%;
+    bottom: 18%;
+    right: -50%;
     .denis_popov-img {
       min-width: 427px;
     }

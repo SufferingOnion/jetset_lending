@@ -75,7 +75,7 @@ export default {
   },
   mounted() {
     document.addEventListener('keydown', this.closeMenu);
-    document.addEventListener('scroll', this.changeVisibility);
+    document.addEventListener('scroll', this.changeVisibility,{ passive: true });
     const anchors = document.querySelectorAll('a[href*="#"]')
 
     for (let anchor of anchors) {
@@ -119,7 +119,7 @@ export default {
     left: 0;
     z-index: 1010;
     width: 100%;
-    height: 112px;
+    height: 79px;
     padding: 0 5.25% 0 12.6%;
     display: flex;
     align-items: center;
@@ -183,7 +183,6 @@ opacity: 0.5;
 .menu_icon{
   width: 7.1vw;
   max-width: 117px;
-
   .ham {
     width: 9.25vw;
     max-width: 114px;
@@ -194,9 +193,12 @@ opacity: 0.5;
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    transform: scaleY(0.8);
+
   }
   .hamRotate.active {
-    transform: rotate(45deg);
+
+    transform: rotate(45deg) scaleY(1);
   }
   .line {
     fill:none;

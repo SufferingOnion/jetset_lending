@@ -3,7 +3,7 @@
     <three-model></three-model>
     <div class="company_name">
       <h1 class="header_text company_name__name">JETSET</h1>
-      <h2 class="blue_text company_name__description">агентство реактивного цикла </h2>
+      <h2 class="blue_text company_name__description">коммуникационное агентство<br>реактивного цикла</h2>
     </div>
     <a href="#about-company" class="scroll_down" @click="scrollDown"></a>
   </div>
