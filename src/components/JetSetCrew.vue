@@ -221,9 +221,9 @@ export default {
           gap: 10,
         },
         425: {
-          startAt: 0,
+          startAt: 1,
           perView: 1,
-          focusAt: 'center',
+          focusAt: 1,
           gap: 0,
         },
       }
