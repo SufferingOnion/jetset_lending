@@ -255,6 +255,12 @@ export default {
     }
   }
 }
+@media (max-width: 1000px) {
+  .carousel__arrows{
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .communication{
     height: 111vw;

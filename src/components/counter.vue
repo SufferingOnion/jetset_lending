@@ -62,8 +62,8 @@ export default {
     top: calc(10%);
   }
   .factoid_text {
-    font-size: 60px;
-    line-height: 90px;
+    font-size: 50px;
+    line-height: 150%;
     letter-spacing: 0.1em;
     text-align: center;
 
@@ -72,7 +72,7 @@ export default {
     width: 100%;
     text-align: center;
     font-size: 21px;
-    line-height: 31px;
+    line-height: 150%;
     text-transform: uppercase;
     color: #150F0F;
   }

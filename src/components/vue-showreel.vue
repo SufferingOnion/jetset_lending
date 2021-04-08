@@ -9,25 +9,17 @@
       <div class="glide__track" data-glide-el="track">
         <div class="glide__slides">
           <div class="glide__slide">
-            <Vue-counter val="22" :plus="''">ГОДА ОПЫТА</Vue-counter>
-            <Vue-counter val="50" :plus="'+'">ГЛОБАЛЬНЫХ<br>ПРОЕКТОВ</Vue-counter>
-            <Vue-counter class="desktop_factoid" val="100" :plus="'+'">ПРИЛОЖЕНИЙ<br>И ВЕБ-ПРОЕКТОВ</Vue-counter>
-            <Vue-counter class="desktop_factoid" val="20" :plus="'+'">ГЛОБАЛЬНЫХ<br>ПАРТНЕРОВ</Vue-counter>
-          </div>
-          <div v-if="false" class="glide__slide mobile_factoid">
-            <Vue-counter val="100" :plus="'+'">ПРИЛОЖЕНИЙ<br>И ВЕБ-ПРОЕКТОВ</Vue-counter>
-            <Vue-counter val="20" :plus="'+'">ГЛОБАЛЬНЫХ<br>ПАРТНЕРОВ</Vue-counter>
-          </div>
-          <div class="glide__slide factoidMORE">
-            <Vue-counter val="1000" :plus="''">КРУПНЫХ СОБЫТИЙ</Vue-counter>
-            <Vue-counter val="90000" :plus="''"><span>ЧАСОВ ВИДЕО, ДИЗАЙН ПРОЕКТОВ И ПРОМО-КОНСТРУКЦИЙ </span></Vue-counter>
+            <Vue-counter val="20" :plus="'+'">ЛЕТ ОПЫТА</Vue-counter>
+            <Vue-counter class="big_fact" val="20000" :plus="'+'">ПРОЕКТОВ</Vue-counter>
+            <Vue-counter val="200" :plus="'+'">приложений <br>и веб-проектов</Vue-counter>
+            <Vue-counter val="20" :plus="''">глобальных <br> партнёров</Vue-counter>
           </div>
         </div>
       </div>
-      <div class="glide__arrows" data-glide-el="controls">
-        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"></button>
-        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"></button>
-      </div>
+<!--      <div class="glide__arrows" data-glide-el="controls">-->
+<!--        <button class="glide__arrow glide__arrow&#45;&#45;left" data-glide-dir="<"></button>-->
+<!--        <button class="glide__arrow glide__arrow&#45;&#45;right" data-glide-dir=">"></button>-->
+<!--      </div>-->
     </div>
   </div>
 </template>
@@ -143,17 +135,21 @@ export default {
   .glide__slide{
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 1fr;
+    //grid-template-columns: 1fr 2fr 1fr 1fr;
+    grid-template-columns: 23% 31% 23% 23%;
     padding: 0 12.6vw;
-  }
-  .mobile_factoid{
-    display: none;
+    .counter{
+
+    }
+    .big_fact{
+
+    }
   }
 }
 
-.factoidMORE{
-  grid-auto-columns: 1fr 2fr;
-}
+//.factoidMORE{
+//  grid-auto-columns: 1fr 2fr;
+//}
 video{
   cursor: pointer;
 }
