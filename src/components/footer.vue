@@ -10,10 +10,10 @@
       </p>
     </div>
     <form class="footer_proposal proposal">
-      <input class="blue_text proposal_input input" type="text" placeholder="Ваше имя*">
-      <input class="blue_text proposal_input input" type="text" placeholder="Ваш телефон*">
-      <input class="blue_text proposal_input input" type="text" placeholder="Ваш email*">
-      <input class="blue_text proposal_input input" type="text" placeholder="Описание проекта ">
+      <input v-model="name" class="blue_text proposal_input input" type="text" placeholder="Ваше имя*">
+      <input v-model="tel" class="blue_text proposal_input input" type="text" placeholder="Ваш телефон*">
+      <input v-model="email" class="blue_text proposal_input input" type="text" placeholder="Ваш email*">
+      <input v-model="msg" class="blue_text proposal_input input" type="text" placeholder="Описание проекта ">
       <button  class="blue_text sendProposal">Отправить</button>
       <p class="blue_text proposal_agreement">
         Нажимая на кнопку, вы даете согласие на обработку <a href="">персональных данных</a>
@@ -38,7 +38,10 @@ export default {
   },
   data(){
     return{
-
+      name: '',
+      tel: '',
+      email: '',
+      msg: '',
     }
   },
   methods: {
