@@ -271,7 +271,7 @@ export default {
           text-align: center;
           letter-spacing: 1px;
           color: #FFFFFF;
-          margin-top: 10px;
+          margin: 10px 0 42px;
         }
       }
     }
@@ -300,6 +300,7 @@ export default {
           .member-position{
             font-size: 1.125vw;
             line-height: 1.68vw;
+            margin: 6px 0 22px;
           }
         }
       }

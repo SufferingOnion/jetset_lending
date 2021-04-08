@@ -4,11 +4,11 @@
     <Vue-header></Vue-header>
     <About-company id="about-company"></About-company>
     <Vue-showreel id="showreel"></Vue-showreel>
-    <Vue-instagramm id="instagramm" class="container"></Vue-instagramm>
     <Vue-360 id="360"></Vue-360>
     <Key-customers id="customers" />
     <Reviews id="reviews" />
     <JetSet-crew id="crew" />
+    <Vue-instagramm id="instagramm" class="container"></Vue-instagramm>
     <Footer />
   </div>
 </template>

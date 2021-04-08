@@ -43,7 +43,7 @@ export default {
   &__name{
     font-size: 80px;
     line-height: 80px;
-    margin: 0;
+    margin: 0 0 20px;
   }
   &__description{
     font-size: 28px;

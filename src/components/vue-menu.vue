@@ -168,7 +168,7 @@ export default {
   display: flex;
   align-items: center;
   .separator{
-    margin-top: -7px;
+    font-size: 100%;
   }
 }
 .disable_lang{
@@ -180,6 +180,7 @@ opacity: 0.5;
   margin: 0 6px;
 
 }
+
 .menu_icon{
   width: 7.1vw;
   max-width: 117px;
@@ -204,7 +205,7 @@ opacity: 0.5;
     fill:none;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
     stroke:#1E30F4;
-    stroke-width:5.5;
+    stroke-width:3;
     stroke-linecap:round;
   }
   .ham8 .top {
