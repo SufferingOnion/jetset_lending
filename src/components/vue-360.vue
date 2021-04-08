@@ -9,6 +9,10 @@
                 ДИДЖИТАЛ<br>
                 ПРОДАКШН
               </h2>
+              <p class="descr_text blue_text">
+                Относимся к созданию сайтов <br>
+                и приложений как к искусству
+              </p>
             </div>
           </div>
           <div class="slide__item b">
@@ -17,6 +21,10 @@
               <h2 class="header_text">
                 ДИЗАЙН СТУДИЯ
               </h2>
+              <p class="descr_text blue_text">
+                Хороший фирменый стиль могут создать многие. <br>
+                Уникальный - можем создать мы
+              </p>
             </div>
           </div>
           <div class="slide__item c">
@@ -25,6 +33,9 @@
               <h2 class="header_text">
                 SMM & CRM
               </h2>
+              <p class="descr_text blue_text">
+                Найдём общий язык с вашими клиентами за вас
+              </p>
             </div>
           </div>
           <div class="slide__item d">
@@ -33,6 +44,9 @@
               <h2 class="header_text">
                 ПРОИЗВОДСТВО
               </h2>
+              <p class="descr_text blue_text">
+                Воплощаем свои и ваши идеи в реальность
+              </p>
             </div>
           </div>
           <div class="slide__item e">
@@ -41,6 +55,10 @@
               <h2 class="header_text">
                 СТРАТЕГИИ
               </h2>
+              <p class="descr_text blue_text">
+                Разрабатываем линии продвижения, <br>
+                с которыми можно захватить мир
+              </p>
             </div>
           </div>
           <div class="slide__item f">
@@ -49,6 +67,9 @@
               <h2 class="header_text">
                 ИВЕНТ МАРКЕТИНГ
               </h2>
+              <p class="descr_text blue_text">
+                Создаём события, которые позже становятся культовыми
+              </p>
             </div>
           </div>
         </div>
@@ -210,6 +231,7 @@ export default {
     top: 0;
     left: 0;
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     padding: 0 4vw;
@@ -221,6 +243,15 @@ export default {
       letter-spacing: 0.1em;
       color: #FFFFFF;
       user-select: none;
+      margin-bottom: 15px;
+    }
+    .descr_text{
+      font-size: 18px;
+      line-height: 150%;
+      color: #FFFFFF;
+      text-align: center;
+      user-select: none;
+      margin: 0;
     }
   }
 }

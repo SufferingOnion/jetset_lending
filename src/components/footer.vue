@@ -22,7 +22,7 @@
     </form>
     <div class="contacts">
       <a class="blue_text email" href="mailto:reception@jetsetholding.com">reception@jetsetholding.com</a>
-      <a class="contacts_logo"></a>
+      <a class="contacts_logo" @click="ScrollUp"></a>
       <a class="contacts_fb"></a>
       <a class="contacts_insta"></a>
     </div>
@@ -42,6 +42,11 @@ export default {
     }
   },
   methods: {
+    ScrollUp(){
+      let t,s;
+      s=document.body.scrollTop||window.pageYOffset;
+      t=setInterval(function(){if(s>0)window.scroll(0,s-=50);else clearInterval(t)},5);
+    }
   },
   mounted() {
 
@@ -159,29 +164,36 @@ export default {
     &_logo{
       grid-column: span 2;
       display: block;
-      mask: url("../assets/icons/logo.svg") center no-repeat;
+      background: url("../assets/icons/logo.svg") center no-repeat;
       width: 71px;
       height: 71px;
+      //color: #1E30F4;
     }
+
     &_fb{
       display: block;
       mask: url("../assets/icons/facebook.svg") center no-repeat;
       width: 71px;
       height: 71px;
+      background-color: #1E30F4;
     }
     &_insta{
       display: block;
       mask: url("../assets/icons/instagram.svg") center no-repeat;
       width: 71px;
       height: 71px;
+      background-color: #1E30F4;
     }
     &_logo, &_fb, &_insta{
       cursor: pointer;
-      background-color: #1E30F4;
-      transition: background-color 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
     }
-    &_logo:hover, &_fb:hover, &_insta:hover{
+    &_fb:hover, &_insta:hover{
       background-color: #FFFFFF;
+    }
+    &_logo:hover{
+      background: url("../assets/icons/logo-hover.svg") center no-repeat;
+      color: #1E30F4;
     }
   }
 }
