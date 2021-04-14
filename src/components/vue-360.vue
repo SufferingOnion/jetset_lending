@@ -283,6 +283,10 @@ export default {
         font-size: 2.5vw;
         line-height: 130%;
       }
+      .descr_text{
+        font-size: 1.125vw;
+        margin: 0;
+      }
     }
   }
 }
@@ -294,14 +298,14 @@ export default {
 
 @media (max-width: 768px) {
   .communication{
-    height: 111vw;
+    height: 100vw;
   }
   .carousel {
-    height: 111vw;
+    height: 100vw;
   }
   .slide__item{
     width: 64.3vw;
-    height: 111vw;
+    height: 100vw;
     overflow: hidden;
 
     .item_img{
@@ -315,25 +319,29 @@ export default {
       .header_text {
         font-size: 4vw;
       }
+      .descr_text{
+        font-size: 3vw;
+        margin: 0;
+      }
     }
   }
   .a {
-    transform: rotateY(0deg) translateZ(50vw) scale(0.8);
+    transform: rotateY(0deg) translateZ(42vw) scale(0.7);
   }
   .b {
-    transform: rotateY(60deg) translateZ(50vw) scale(0.8);
+    transform: rotateY(60deg) translateZ(42vw) scale(0.7);
   }
   .c {
-    transform: rotateY(120deg) translateZ(50vw) scale(0.8);
+    transform: rotateY(120deg) translateZ(42vw) scale(0.7);
   }
   .d {
-    transform: rotateY(180deg) translateZ(50vw) scale(0.8);
+    transform: rotateY(180deg) translateZ(42vw) scale(0.7);
   }
   .e {
-    transform: rotateY(240deg) translateZ(50vw) scale(0.8);
+    transform: rotateY(240deg) translateZ(42vw) scale(0.7);
   }
   .f {
-    transform: rotateY(300deg) translateZ(50vw) scale(0.8);
+    transform: rotateY(300deg) translateZ(42vw) scale(0.7);
   }
 }
 </style>

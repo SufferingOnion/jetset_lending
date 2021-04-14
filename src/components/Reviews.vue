@@ -7,8 +7,8 @@
         <div class="glide__slides">
           <div v-for="(reviewer, index) in reviews" :key="index" class="glide__slide">
             <div class="logo_container-review">
-              <img class="logo" loading="lazy" :src="require(`../assets/img/customers/${reviewer.img}-review.png`)">
-              <img class="logo-hover" loading="lazy" :src="require(`../assets/img/customers/${reviewer.img}-review-hover.png`)">
+              <img class="logo" :src="require(`../assets/img/customers/${reviewer.img}-review.png`)">
+              <img class="logo-hover" :src="require(`../assets/img/customers/${reviewer.img}-review-hover.png`)">
             </div>
             <div class="review">
               <p class="reviewer_name header_text">{{ reviewer.name }}</p>
@@ -209,7 +209,7 @@ export default {
 
         .logo {
           position: relative;
-          width: 60%;
+          //width: 60%;
         }
 
         .logo-hover {
@@ -266,6 +266,12 @@ export default {
 @media (max-width: 768px) {
   .reviews {
     .glide__slide {
+      .logo_container-review {
+
+        .logo {
+          width: 60%;
+        }
+      }
       .review {
 
         padding: 34px 8.125vw;

@@ -4,6 +4,7 @@
       <video @click="PlayVideo" ref="video" src="https://jetsetholding.world/wp-content/uploads/2020/07/video.mp4" width="100%"></video>
       <div v-if="!isPlaying" @click="PlayVideo" class="video_play">
       </div>
+      <div class="video_back"></div>
     </div>
     <div class="facts">
       <div class="glide__track" data-glide-el="track">
@@ -12,7 +13,7 @@
             <Vue-counter val="20" :plus="'+'">ЛЕТ ОПЫТА</Vue-counter>
             <Vue-counter class="big_fact" val="20000" :plus="'+'">ПРОЕКТОВ</Vue-counter>
             <Vue-counter val="200" :plus="'+'">приложений <br>и веб-проектов</Vue-counter>
-            <Vue-counter val="20" :plus="''">глобальных <br> партнёров</Vue-counter>
+            <Vue-counter val="20" :plus="'+'">глобальных <br> партнёров</Vue-counter>
           </div>
         </div>
       </div>
@@ -147,15 +148,25 @@ export default {
   }
 }
 
-//.factoidMORE{
-//  grid-auto-columns: 1fr 2fr;
-//}
 video{
   cursor: pointer;
 }
 .video_container{
   position: relative;
   padding: 0 12.6%;
+  .video_back {
+    position: absolute;
+
+    z-index: -1;
+    width: 40vw;
+    min-width: 338px;
+    max-width: 1423px;
+    height: 40vw;
+    background: url("~@/assets/icons/back-texture.png") 30% 50% no-repeat;
+    transform: skewY(-15deg) scaleY(0.75) scaleX(0.9);
+    right: -32px;
+    top: 0;
+  }
   .video_play{
     position: absolute;
     top: 0;
@@ -180,22 +191,80 @@ video{
 
 
 @media (max-width: 768px) {
-  .desktop_factoid{
-    display: none;
-  }
-  .mobile_factoid{
-    display: grid;
-  }
+
   .video_container{
     padding: 0 5%;
+    .video_back {
+      position: absolute;
+
+      z-index: -1;
+      width: 100%;
+      height: 100vw;
+      max-height: 345px;
+      background: url("~@/assets/icons/back-texture.png") 30% 50% no-repeat;
+      transform: skewY(-15deg) scaleY(0.75) scaleX(1);
+      right: 0;
+      top: 30%;
+    }
   }
   .facts{
-    margin: 0;
+    margin: 19px 0;
     .glide__arrows{
       display: none;
     }
     .glide__slide{
       padding: 0 5vw;
+    }
+  }
+}
+@media (max-width: 570px) {
+  .facts{
+    .glide__slide{
+      display: grid;
+
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-auto-rows: auto;
+      row-gap: 38px;
+      .counter{
+        &:before{
+          display: none;
+        }
+        &:nth-child(1){
+          grid-column: 1/3;
+          grid-row: 1/2;
+        }
+        &:nth-child(2){
+          grid-column: 3/5;
+          grid-row: 1/2;
+        }
+        &:nth-child(3){
+          grid-column: 1/3;
+          grid-row: 2/3;
+        }
+        &:nth-child(4){
+          grid-column: span 2;
+          grid-row: 2/3;
+        }
+      }
+      .big_fact{
+
+      }
+    }
+  }
+}
+@media (max-width: 530px) {
+  .video_container{
+    .video_back {
+      position: absolute;
+
+      z-index: -1;
+      width: 100%;
+      height: 100vw;
+      max-height: 345px;
+      background: url("~@/assets/icons/back-texture.png") 30% 50% no-repeat;
+      transform: skewY(-15deg) scaleY(0.75) scaleX(1);
+      right: 0;
+      top: 0%;
     }
   }
 }

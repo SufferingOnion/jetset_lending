@@ -65,11 +65,7 @@ export default {
 .body,#main_container{
   overflow-x: hidden;
 }
-.logo_container{
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
+
 .container{
 
   max-width: 1920px;

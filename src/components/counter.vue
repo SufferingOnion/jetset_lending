@@ -89,7 +89,19 @@ export default {
     }
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1366px) {
+  .counter{
+    .factoid_text {
+      font-size: 40px;
+      line-height: 1.3em;
+    }
+    .descr{
+      font-size: 14px;
+      line-height: 1.3em;
+    }
+  }
+}
+@media (max-width: 1200px) {
   .counter{
     .factoid_text {
       font-size: 30px;
@@ -101,7 +113,7 @@ export default {
     }
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 950px) {
   .counter{
 
     .factoid_text {

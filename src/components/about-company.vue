@@ -1,14 +1,21 @@
 <template>
   <div class="about-company">
     <div ref="aboutScene" id="about_scene">
-      <div data-depth="0.1" class="main_back"></div>
+      <img data-depth="0.1" src="@/assets/icons/back-texture.png" class="main_back">
       <div data-depth="-0.2" class="dots-container">
         <div class="dots dots-vertical"></div>
         <div class="dots dots-horizontal"></div>
       </div>
 
       <div data-depth="0.25" class="denis_popov-ceo">
-        <img data-depth="0.2" class="denis_popov-img" src="../assets/img/denis_popov.png" alt="">
+        <img data-depth="0.2"
+             class="denis_popov-img img-desktop"
+             src="../assets/img/denis_popov.png"
+             alt="">
+        <img data-depth="0.2"
+             class="denis_popov-img img-mobile"
+             src="../assets/img/denis_popov430.png"
+             alt="">
         <div class="ceo">
           <span class="header_text">Денис Попов</span>
           <p class="blue_text">Основатель и президент Jetset Holding</p>
@@ -71,8 +78,8 @@ export default {
   #about_scene {
     position: relative;
     width: 100%;
-    //height: 60vh;
-    //max-height: 640px;
+    margin: 0 auto;
+    max-width: 1920px;
     height: 617px;
 display: flex;
     justify-content: center;
@@ -85,7 +92,7 @@ display: flex;
     width: 74.8%;
     height: 100%;
     min-width: 1221px;
-    max-width: 1423px;
+    max-width: 1920px;
   }
   .dots {
     position: absolute;
@@ -114,11 +121,7 @@ display: flex;
 
 
 
-.denis_popov-img {
-  min-width: 440px;
-  width: 36.5vw;
-  max-width: 584px;
-}
+
 
 .denis_popov-ceo {
   position: absolute;
@@ -128,7 +131,14 @@ display: flex;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-
+  .denis_popov-img {
+    min-width: 440px;
+    width: 36.5vw;
+    max-width: 584px;
+  }
+  .img-mobile{
+    display: none;
+  }
   .ceo {
     position: absolute;
     bottom: -15%;
@@ -151,15 +161,15 @@ display: flex;
 
     .header_text {
       font-size: 24px;
-      line-height: 24px;
+      line-height: 150%;
       letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
     .blue_text {
-      margin: 10px 0;
       font-size: 18px;
-      line-height: 18px;
+      line-height: 150%;
+      margin: 0;
     }
   }
 }
@@ -191,7 +201,7 @@ display: flex;
 .about-company-text{
   position: absolute;
   width: 491px;
-  top: 16%;
+  top: 22%;
   left: 22%;
   &:before{
     position: absolute;
@@ -215,14 +225,21 @@ display: flex;
   min-width: 1221px;
   max-width: 1423px;
   height: 100%;
-  background: url("~@/assets/img/about_main_background.png") no-repeat;
-  background-size: 100% 100%;
+  mask: url("~@/assets/icons/about_back.svg") no-repeat;
+  mask-size: 100% 100%;
+  mask-position: center center;
 }
 
+@media (min-width: 1760px) {
+  .about-company-text{
+    top: 22%;
+    left: 26%;
+  }
+}
 @media (max-width: 1440px) {
   .about-company-text{
-    top: 4%;
-    left: 8%;
+    top: 16%;
+    left: 18%;
   }
   .denis_popov-ceo{
     .ceo{
@@ -230,32 +247,38 @@ display: flex;
     }
   }
 }
-@media (max-width: 1024px) {
-  .main_back {
-  height: 791px;
-  }
-    .about-company-text{
-    top: -4%;
-    left: 8%;
-  }
+@media (max-width: 1280px) {
   .denis_popov-ceo{
     bottom: 20%;
     right: 7.6%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .main_back {
+    //position: absolute;
+    //top: -25%;
+    width: 130%;
+    height: 130%;
+    mask-size: 130% 130%;
+  }
+  .about-company-text{
+    top: 16%;
+    left: 8%;
+  }
+  .denis_popov-ceo{
+    bottom: 20%;
+    right: 5%;
+  }
+}
+@media (max-width: 950px) {
+
   .svgPolygon{
     display: none;
   }
-  .denis_popov-ceo{
-    bottom: 10%;
-  }
-}
-@media (max-width: 570px) {
   .about-company-text{
     width: 100vw;
     left: 0;
-    top: -2%;
+    top: 2%;
     padding: 0 8.125%;
     &:before{
       display: none;
@@ -267,55 +290,96 @@ display: flex;
     }
   }
   .denis_popov-ceo{
-    bottom: 20%;
-    right: -9%;
+    bottom: 10%;
+    right: unset;
+    justify-content: center;
+    align-items: center;
+    .denis_popov-img {
+      position: relative;
+      top: 7%;
+      min-width: 417px;
+      width: 36.5vw;
+      max-width: 584px;
+    }
     .ceo{
-      width: 120%;
+      width: 80vw;
+      min-width: 452px;
+      max-width: 500px;
       height: 20%;
+      bottom: 0;
+      left: unset;
+
+
       .header_text {
         font-size: 14px;
-        line-height: 21px;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        margin-left: -15%;
+        width: 300px;
       }
 
       .blue_text {
-
+        width: 300px;
         font-size: 12px;
-        line-height: 18px;
-        margin: 5px 0 0 -15%;
       }
     }
   }
 }
 @media (max-width: 430px) {
+  .main_back {
+    position: relative;
+    left: 40%;
+  }
+  .about-company-text{
+    top: -4%;
+  }
   .denis_popov-ceo{
-    right: -20%;
-    bottom: 20%;
+    right: unset;
+    left: 0;
+    bottom: 15%;
+    justify-content: flex-end;
+    align-items: flex-end;
+    .denis_popov-img {
+      position: relative;
+      top: 0%;
+      left: 5px;
+      min-width: 320px;
+      width: 100vw;
+    }
+    .img-mobile{
+      display: block;
+    }
+    .img-desktop{
+      display: none;
+    }
+    .ceo{
+      width: 80vw;
+      min-width: 452px;
+      max-width: 500px;
+      height: 20%;
+      bottom: -15%;
+      left: 0;
+      align-items: flex-start;
+      padding-left: 10.31vw;
+      .header_text {
+        font-size: 14px;
+        width: 300px;
+      }
+
+      .blue_text {
+        width: 300px;
+        font-size: 12px;
+      }
+    }
   }
 }
 @media (max-width: 375px) {
   .denis_popov-ceo{
-    right: -30%;
     bottom: 20%;
   }
 }
 @media (max-width: 340px) {
-  .about-company-text{
-    left: 0;
-    top: -6%;
-  }
+
   .denis_popov-ceo{
-    bottom: 18%;
-    right: -50%;
-    .denis_popov-img {
-      min-width: 427px;
-    }
+    bottom: 25%;
   }
-  .main_back {
-   position: relative;
-    left: 40%;
-  }
+
 }
 </style>

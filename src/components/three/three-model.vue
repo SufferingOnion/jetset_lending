@@ -37,10 +37,12 @@ export default {
   },
   methods: {
     init() {
+      this.width = window.innerWidth;
+      this.height = window.innerHeight;
       // SCENE AND CAMERA
       this.scene = new THREE.Scene();
 
-      this.camera = new THREE.PerspectiveCamera( 45, ( window.innerWidth ) / window.innerHeight, 1000, 2000 );
+      this.camera = new THREE.PerspectiveCamera( 45, ( this.width ) / this.height, 1000, 2000 );
       this.camera.position.z = 1500;
 
       // RENDERER
@@ -55,7 +57,7 @@ export default {
       this.renderer.outputEncoding = THREE.sRGBEncoding;
       this.renderer.setClearColor( 0xcccccc );
       this.renderer.setPixelRatio(window.devicePixelRatio);
-      this.renderer.setSize(window.innerWidth, window.innerHeight);
+      this.renderer.setSize(this.width, this.height);
 
 
       // FXAA
@@ -65,8 +67,8 @@ export default {
 
       const pixelRatio = this.renderer.getPixelRatio();
 
-      this.fxaaPass.material.uniforms['resolution'].value.x = 1 / (this.$refs.threejs.offsetWidth * pixelRatio);
-      this.fxaaPass.material.uniforms['resolution'].value.y = 1 / (this.$refs.threejs.offsetHeight * pixelRatio);
+      this.fxaaPass.material.uniforms['resolution'].value.x = 1 / (this.width * pixelRatio);
+      this.fxaaPass.material.uniforms['resolution'].value.y = 1 / (this.height * pixelRatio);
 
       this.composer1 = new EffectComposer(this.renderer);
       this.composer1.addPass(this.renderPass);
@@ -125,7 +127,7 @@ export default {
       // BACKGROUND
 
       this.scene.background = new THREE.Color(0xffffff);
-      window.addEventListener('mousemove', this.onDocumentMouseMove,{ passive: true });
+      this.$refs.threejs.addEventListener('mousemove', this.onDocumentMouseMove,{ passive: true });
 
       //ENVIRONMENT
       const pmremGenerator = new THREE.PMREMGenerator( this.renderer );
@@ -150,29 +152,33 @@ export default {
       this.mouseY = e.clientY;
     },
     render: function(){
-        this.logo.rotation.z = -0.35-(this.mouseX - window.innerWidth / 2) / 5000;
-        this.logo.rotation.x = 1.3 + (this.mouseY - window.innerHeight / 2) / 5000;
+        this.logo.rotation.z = -0.35-(this.mouseX - this.width / 2) / 5000;
+        this.logo.rotation.x = 1.3 + (this.mouseY - this.height / 2) / 5000;
     },
     animate: function () {
       requestAnimationFrame(this.animate);
-      this.renderer.setViewport( 0, 0, window.innerWidth, window.innerHeight );
+      this.renderer.setViewport( 0, 0, this.width, this.height );
       this.render();
       this.composer1.render();
     },
     onWindowResize: function () {
-
-
-      this.camera.aspect = window.innerWidth / window.innerHeight;
+      if(this.width === window.innerWidth) {
+        return;
+      }
+      this.width = window.innerWidth;
+      this.height = window.innerHeight;
+      requestAnimationFrame(this.onWindowResize);
+      this.camera.aspect = this.width / this.height;
       this.camera.updateProjectionMatrix();
 
-      this.renderer.setSize( window.innerWidth, window.innerHeight );
-      this.composer1.setSize( window.innerWidth, window.innerHeight );
+      this.renderer.setSize( this.width, this.height );
+      this.composer1.setSize( this.width, this.height );
 
       const pixelRatio = this.renderer.getPixelRatio();
 
-      this.fxaaPass.material.uniforms[ 'resolution' ].value.x = 1 / ( window.innerWidth * pixelRatio );
-      this.fxaaPass.material.uniforms[ 'resolution' ].value.y = 1 / ( window.innerHeight * pixelRatio );
-      this.logo.position.set(-window.innerWidth/100*20, -50, 0);
+      this.fxaaPass.material.uniforms[ 'resolution' ].value.x = 1 / ( this.width * pixelRatio );
+      this.fxaaPass.material.uniforms[ 'resolution' ].value.y = 1 / ( this.height * pixelRatio );
+      this.logo.position.set(-this.width/100*20, -50, 0);
     },
   },
   watch: {
@@ -192,17 +198,16 @@ export default {
 </script>
 <style lang="scss">
 #container {
-  position: absolute;
   width: 100%;
-  height: 100vh;
+
   overflow-x: hidden;
 
   canvas {
-    position: absolute;
+
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+
   }
 }
 </style>
