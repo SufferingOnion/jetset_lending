@@ -75,14 +75,14 @@ export default {
 }
 @media (max-width: 1440px) {
   .companyNameWrapper{
-    padding: 0 8%;
+    padding: 0 5%;
     .company_name{
       &__name{
-        font-size: 60px;
+        //font-size: 60px;
         margin: 0;
       }
       &__description{
-        font-size: 18px;
+        //font-size: 18px;
         margin: 0;
       }
     }
@@ -91,20 +91,20 @@ export default {
 }
 @media (max-width: 1280px) {
   .companyNameWrapper{
-    padding: 0 6%;
+    //padding: 0 6%;
   }
 
 }
 
 @media (max-width: 1200px) {
   .companyNameWrapper{
-    padding: 0 8%;
+    padding: 0 30px;
     .company_name{
       &__name{
-        font-size: 50px;
+        //font-size: 50px;
       }
       &__description{
-        font-size: 15px;
+        //font-size: 15px;
       }
     }
   }
@@ -115,7 +115,7 @@ export default {
     //justify-content: center;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1000px){
   .header{
 
   }
@@ -126,15 +126,15 @@ export default {
     display: none;
   }
 }
-@media (max-width: 530px) {
+@media (max-width: 600px) {
   .companyNameWrapper{
     padding: 0 1.875vw;
     .company_name{
       &__name{
-        font-size: 40px;
+        font-size: 12.5vw;
       }
       &__description{
-        font-size: 12px;
+        font-size: 3.75vw;
       }
     }
   }

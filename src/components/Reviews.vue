@@ -107,7 +107,7 @@ export default {
 <style lang="scss">
 .reviews-wrapper{
   position: relative;
-  margin: 96px 0;
+  margin: 6vw 0 4.31vw;
   .dots-horizontal {
     position: absolute;
     z-index: -1;
@@ -197,7 +197,7 @@ export default {
       .logo_container-review {
         overflow: hidden;
         position: relative;
-
+        padding-bottom: 40%;
         display: flex;
         flex: none;
         max-height: 200px;
@@ -208,14 +208,18 @@ export default {
         transition: background-color 0.2s ease;
 
         .logo {
-          position: relative;
-          //width: 60%;
+          position: absolute;
+          top: 0;
+          width: auto;
+          height: 100%;
         }
 
         .logo-hover {
           position: absolute;
-          width: 60%;
+          width: auto;
+          height: 100%;
           z-index: 2;
+          top: 0;
           opacity: 0;
           transition: opacity 0.2s ease;
         }
@@ -269,7 +273,7 @@ export default {
       .logo_container-review {
 
         .logo {
-          width: 60%;
+          //width: 60%;
         }
       }
       .review {

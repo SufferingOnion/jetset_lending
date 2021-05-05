@@ -1,18 +1,20 @@
 <template>
   <div class="footer">
-    <div class="footer_needProject needProject">
-      <h2 class="header_text needProject_header">
-        Нужен проект?
+    <div class="footer_contacts contacts">
+      <h2 class="header_text contacts_header">
+        Наш офис:
       </h2>
-      <p class="blue_text needProject_content">
-        Оставьте заявку, либо звоните, мы пообщаемся <br>
-        и сами все за вас заполним: <a class="content_tel" href="tel:+7 812 915-15-15">+7 812 915-15-15</a>
+      <p class="blue_text contacts_content">
+        г. Санкт-Петербург, <br>
+        Красногвардейская пл, д. 3 литер Е офис 313 <br>
+        Design Disrtict DAA
       </p>
+      <a class="blue_text email" href="mailto:welcome@jetsetholding.com">welcome@jetsetholding.com</a>
     </div>
     <form class="footer_proposal proposal">
-      <input v-model="name" class="blue_text proposal_input input" type="text" placeholder="Ваше имя*">
-      <input v-model="tel" class="blue_text proposal_input input" type="text" placeholder="Ваш телефон*">
-      <input v-model="email" class="blue_text proposal_input input" type="text" placeholder="Ваш email*">
+      <input v-model="name" class="blue_text proposal_input input" type="text" placeholder="Ваше имя*" required>
+      <input v-model="tel" v-mask="'+7(###)###-##-##'" class="blue_text proposal_input input" type="text" placeholder="+7(___)___-__-__"  required>
+      <input v-model="email" class="blue_text proposal_input input" type="text" placeholder="Ваш email*"  required>
       <input v-model="msg" class="blue_text proposal_input input" type="text" placeholder="Описание проекта ">
       <button  class="blue_text sendProposal">Отправить</button>
       <p class="blue_text proposal_agreement">
@@ -20,11 +22,10 @@
         и соглашаетесь с <a href="">политикой конфиденциальности</a>
       </p>
     </form>
-    <div class="contacts">
-      <a class="blue_text email" href="mailto:reception@jetsetholding.com">reception@jetsetholding.com</a>
-      <a class="contacts_logo" @click="ScrollUp"></a>
-      <a class="contacts_fb"></a>
-      <a class="contacts_insta"></a>
+    <div class="social">
+      <a class="social_logo" @click="ScrollUp"></a>
+      <a class="social_fb"></a>
+      <a class="social_insta"></a>
     </div>
   </div>
 </template>
@@ -128,8 +129,13 @@ export default {
       }
     }
   }
-  .needProject{
-
+  .contacts{
+    .email{
+      font-size: 18px;
+      line-height: 150%;
+      color: #150F0F;
+      margin-bottom: 2.7em;
+    }
     &_header{
       font-size: 24px;
       line-height: 36px;
@@ -151,19 +157,12 @@ export default {
     }
 
   }
-  .contacts{
+  .social{
     grid-column: 1;
     max-width: 320px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-
-    .email{
-      grid-column: span 4;
-      font-size: 20px;
-      line-height: 150%;
-      color: #150F0F;
-      margin-bottom: 2.7em;
-    }
+    align-items: center;
     &_logo{
       grid-column: span 2;
       display: block;
@@ -200,14 +199,16 @@ export default {
     }
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .footer{
-    padding: 3.9vw 1.95vw;
+    padding: 6vw 6vw;
     grid-template-columns: repeat(1, 100%);
     grid-auto-flow: row;
     grid-template-rows: auto;
-    gap: 41px 0;
+    gap: 48px 0;
     &_proposal{
+      max-width: 500px;
+
       grid-column: 1;
       grid-row: span 1;
       .input{
@@ -233,27 +234,24 @@ export default {
         line-height: 150%;
       }
     }
-    .needProject{
+    .contacts{
+      max-width: 500px;
 
       &_header{
         font-size: 24px;
         line-height: 36px;
         margin: 0 0 7px;
       }
-      &_content{
-        font-size: 18px;
+      &_content,.email{
+        font-size: 20px;
         line-height: 27px;
         margin-top: 0;
       }
 
     }
-    .contacts{
-      grid-column: 1;
+    .social{
 
-      .email{
-        font-size: 20px;
-        line-height: 150%;
-      }
+      grid-column: 1;
       &_logo{
         width: 71px;
         height: 71px;
@@ -271,9 +269,9 @@ export default {
     }
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 500px) {
   .footer{
-    padding: 30px 15px;
+    padding: 9.375vw 4.68vw;
 
     &_proposal{
 
@@ -294,34 +292,31 @@ export default {
         line-height: 150%;
       }
     }
-    .needProject{
+    .contacts{
 
       &_header{
-        font-size: 21px;
+        font-size: 18px;
         line-height: 31px;
         margin: 0 0 13px;
       }
-      &_content{
+      &_content,.email{
         font-size: 15px;
         line-height: 22.5px;
         margin-top: 0;
       }
 
     }
-    .contacts{
+    .social{
       grid-column: 1;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      .email{
-        grid-column: span 4;
-        font-size: 15px;
-        line-height: 150%;
-      }
+      max-width: 100%;
       &_logo{
         grid-column: span 2;
         width: 71px;
         height: 71px;
         margin-right: 0;
+
 
       }
       &_fb{

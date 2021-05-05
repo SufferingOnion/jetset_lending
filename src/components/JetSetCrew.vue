@@ -214,11 +214,14 @@ export default {
     this.Glide = new Glide('.crew',{
       startAt: 1,
       perView: 4,
-      focusAt: 'center',
+      focusAt: 1,
       gap: 28,
       breakpoints: {
-        768: {
-          gap: 10,
+        834: {
+          startAt: 1,
+          perView: 3,
+          focusAt: 1,
+          gap: 22,
         },
         425: {
           startAt: 1,
@@ -234,13 +237,16 @@ export default {
 </script>
 <style lang="scss">
 .crew-wrapper{
-  margin: 96px 0;
+  margin: 4.31vw 0 6vw;
 }
 .glide__slides{
   overflow: visible !important;
+  padding-left: 44px;
+
 }
 .crew{
   width: 100%;
+  padding-left: 12.6%;
   .glide__slide{
     width: min-content;
     display: flex;
@@ -290,6 +296,7 @@ export default {
 
 @media (max-width: 1200px) {
   .crew{
+    padding-left: 8%;
     .glide__slide{
       .member_container{
         .details{
@@ -327,6 +334,7 @@ export default {
 }
 @media (max-width: 425px) {
   .crew{
+    padding-left: 0;
     .glide__slide{
       .member_container{
         width: 100%;

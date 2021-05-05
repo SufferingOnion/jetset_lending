@@ -13,6 +13,7 @@
     "core-js": "^3.6.5",
     "parallax-js": "^3.1.0",
     "three": "^0.125.2",
+    "v-mask": "^2.2.4",
     "vue": "^2.6.11",
     "vue-number-animation": "^1.0.5",
     "vue-observe-visibility": "^1.0.0"
@@ -25,7 +26,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "sass": "^1.26.5",
+    "sass": "^1.32.11",
     "sass-loader": "^8.0.2",
     "vue-cli-plugin-dll": "~1.1.12",
     "vue-template-compiler": "^2.6.11"

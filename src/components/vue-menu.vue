@@ -25,11 +25,11 @@
         <div  v-show="menuActive" class="menu-container" :class="{'menu-active': menuActive}" @click="menuActive=!menuActive">
           <a class="blue_text menu-link" href="#about-company">О НАС</a>
           <a class="blue_text menu-link" href="#showreel">SHOWREEL</a>
-          <a class="blue_text menu-link" href="#instagramm">НАШ INSTAGRAM</a>
           <a class="blue_text menu-link" href="#360">НАШИ ПРОЕКТЫ</a>
           <a class="blue_text menu-link" href="#customers">КЛИЕНТЫ</a>
           <a class="blue_text menu-link" href="#reviews">ОТЗЫВЫ</a>
           <a class="blue_text menu-link" href="#crew">КОМАНДА</a>
+          <a class="blue_text menu-link" href="#instagramm">НАШ INSTAGRAM</a>
         </div>
       </transition>
     </div>

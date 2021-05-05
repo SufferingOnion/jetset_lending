@@ -10,7 +10,7 @@
                 ПРОДАКШН
               </h2>
               <p class="descr_text blue_text">
-                Относимся к созданию сайтов <br>
+                Относимся к созданию сайтов
                 и приложений как к искусству
               </p>
             </div>
@@ -22,7 +22,7 @@
                 ДИЗАЙН СТУДИЯ
               </h2>
               <p class="descr_text blue_text">
-                Хороший фирменый стиль могут создать многие. <br>
+                Хороший фирменый стиль могут создать многие.
                 Уникальный - можем создать мы
               </p>
             </div>
@@ -41,7 +41,7 @@
           <div class="slide__item d">
             <img class="item_img" src="../assets/img/communication4.png" alt="">
             <div class="item_header">
-              <h2 class="header_text">
+              <h2 class="header_text special360header">
                 ПРОИЗВОДСТВО
               </h2>
               <p class="descr_text blue_text">
@@ -184,7 +184,7 @@ export default {
   }
 }
 .communication{
-  margin: 96px 0;
+  margin: 6vw 0 7vw;
   box-sizing: border-box;
   width: 100%;
   height: 36vw;
@@ -278,7 +278,7 @@ export default {
 @media (max-width: 1440px) {
   .slide__item{
     .item_header {
-      padding: 0 4vw;
+      padding: 0 2.5vw;
       .header_text {
         font-size: 2.5vw;
         line-height: 130%;
@@ -290,13 +290,27 @@ export default {
     }
   }
 }
+@media (max-width: 1200px) {
+  .slide__item{
+    .item_header {
+
+      .header_text {
+        font-size: 30px;
+      }
+      .descr_text{
+        font-size: 18px;
+
+      }
+    }
+  }
+}
 @media (max-width: 1000px) {
   .carousel__arrows{
     display: none;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .communication{
     height: 100vw;
   }
@@ -315,14 +329,7 @@ export default {
       right: 67%;
     }
     .item_header {
-      padding: 0 4vw;
-      .header_text {
-        font-size: 4vw;
-      }
-      .descr_text{
-        font-size: 3vw;
-        margin: 0;
-      }
+      padding: 0 17.291%;
     }
   }
   .a {
@@ -342,6 +349,34 @@ export default {
   }
   .f {
     transform: rotateY(300deg) translateZ(42vw) scale(0.7);
+  }
+}
+@media (max-width: 760px) {
+  .slide__item{
+    .item_header {
+      .header_text {
+        font-size: 4vw;
+      }
+      .descr_text{
+        font-size: 2.38vw;
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  .slide__item{
+    .item_header {
+      padding: 0 4.06%;
+      .header_text {
+        font-size: 16px;
+      }
+      .descr_text{
+        font-size: 9px;
+      }
+      .special360header{
+        font-size: 12px;
+      }
+    }
   }
 }
 </style>

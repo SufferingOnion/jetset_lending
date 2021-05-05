@@ -34,7 +34,7 @@ export default {
 <style lang="scss">
 .insta_container{
   padding: 0 12.6%;
-  margin: 96px 0;
+  margin: 6vw 0 3.75vw;
 }
 .insta_wrapper{
   display: grid;
@@ -163,6 +163,11 @@ export default {
     }
   }
 }
+@media (max-width: 1200px) {
+  .insta_container {
+    padding: 0 8%;
+  }
+}
 @media (max-width: 1024px) {
   .insta_wrapper{
     .img_wrapper{
@@ -194,7 +199,6 @@ export default {
 }
 @media (max-width: 768px) {
   .insta_container{
-    padding: 0 8%;
     min-width: 320px;
   }
   .insta_wrapper {

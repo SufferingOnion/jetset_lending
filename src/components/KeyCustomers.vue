@@ -46,7 +46,7 @@ export default {
 <style lang="scss">
 .customers-wrapper{
   padding: 0 12.6%;
-  margin: 96px 0;
+  margin: 7vw 0 6vw;
   .icon_container{
     position: relative;
     display: flex;
@@ -105,9 +105,7 @@ export default {
 @media (max-width: 1300px) {
   .customers-wrapper{
     padding: 0 8.125%;
-    .icon_container{
-      margin: 2.55vw;
-    }
+
   }
 }
 @media (max-width: 1200px) {

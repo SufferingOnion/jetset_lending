@@ -71,7 +71,6 @@ export default {
 <style lang="scss">
 .about-company {
   width: 100%;
-  max-height: 550px;
   margin: 150px auto 0;
 
 
@@ -119,14 +118,11 @@ display: flex;
   }
 }
 
-
-
-
-
 .denis_popov-ceo {
   position: absolute;
+  max-height: 526px;
   right: 12.6%;
-  top: 0;
+  bottom: 19%;
   z-index: 10;
   display: flex;
   justify-content: flex-end;
@@ -145,7 +141,7 @@ display: flex;
     left: -5%;
     background: #1E30F4;
     width: 110%;
-    height: 30%;
+    height: 123px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,10 +217,12 @@ display: flex;
 }
 
 .main_back {
+  position: relative;
   width: 100%;
   min-width: 1221px;
   max-width: 1423px;
   height: 100%;
+  max-height: 617px;
   mask: url("~@/assets/icons/about_back.svg") no-repeat;
   mask-size: 100% 100%;
   mask-position: center center;
@@ -253,13 +251,14 @@ display: flex;
     right: 7.6%;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .main_back {
     //position: absolute;
     //top: -25%;
     width: 130%;
     height: 130%;
-    mask-size: 130% 130%;
+    mask-size: 100% 100%;
+    right: 35px;
   }
   .about-company-text{
     top: 16%;
@@ -271,27 +270,16 @@ display: flex;
   }
 }
 @media (max-width: 950px) {
-
-  .svgPolygon{
-    display: none;
-  }
   .about-company-text{
-    width: 100vw;
+    width: 44%;
+    //max-width: 380px;
+    min-width: 268px;
     left: 0;
-    top: 2%;
-    padding: 0 8.125%;
-    &:before{
-      display: none;
-    }
-    .text{
-      font-size: 12px;
-      line-height: 18px;
-      color: #150F0F;
-    }
+    top: 6%;
+    margin: 0 8.125%;
   }
   .denis_popov-ceo{
     bottom: 10%;
-    right: unset;
     justify-content: center;
     align-items: center;
     .denis_popov-img {
@@ -305,43 +293,94 @@ display: flex;
       width: 80vw;
       min-width: 452px;
       max-width: 500px;
-      height: 20%;
-      bottom: 0;
       left: unset;
-
-
+    }
+  }
+  .main_back {
+    position: absolute;
+    width: 130%;
+    height: 140%;
+    mask-size: 100% 100%;
+    right: unset;
+    max-height: 830px;
+    left: 5%;
+  }
+}
+@media (max-width: 767px) {
+  .svgPolygon{
+    display: none;
+  }
+  .about-company-text{
+    width: 60%;
+    min-width: 268px;
+    left: 0;
+    top: 6%;
+    margin: 0 8.125%;
+    &:before{
+      display: none;
+    }
+    .text{
+      font-size: 12px;
+      line-height: 18px;
+      color: #150F0F;
+    }
+  }
+  .denis_popov-ceo{
+    bottom: 25%;
+    //justify-content: center;
+    //align-items: center;
+  }
+}
+@media (max-width: 600px) {
+  .about-company-text{
+    width: 80%;
+  }
+}
+@media (max-width: 470px) {
+  .about-company {
+    margin: 15px auto 8vw;
+  }
+  .about-company-text{
+    width: 80%;
+  }
+  .denis_popov-ceo {
+    //right: -12%;
+    .ceo{
       .header_text {
         font-size: 14px;
-        width: 300px;
       }
 
       .blue_text {
-        width: 300px;
         font-size: 12px;
       }
     }
   }
 }
-@media (max-width: 430px) {
+@media (max-width: 500px) {
   .main_back {
-    position: relative;
-    left: 40%;
+    position: absolute;
+    left: -23%;
+    width: 100%;
+    height: 100%;
+    mask-size: 100% 100%;
   }
   .about-company-text{
-    top: -4%;
+    top: 6%;
   }
   .denis_popov-ceo{
+    width: 105%;
+    left: 0%;
     right: unset;
-    left: 0;
-    bottom: 15%;
-    justify-content: flex-end;
+
+    bottom: 20%;
+    justify-content: center;
     align-items: flex-end;
     .denis_popov-img {
       position: relative;
       top: 0%;
-      left: 5px;
+      right: 0%;
       min-width: 320px;
-      width: 100vw;
+      width: 80vw;
     }
     .img-mobile{
       display: block;
@@ -353,9 +392,9 @@ display: flex;
       width: 80vw;
       min-width: 452px;
       max-width: 500px;
-      height: 20%;
-      bottom: -15%;
-      left: 0;
+      height: 75px;
+      bottom: -17%;
+      left: unset;
       align-items: flex-start;
       padding-left: 10.31vw;
       .header_text {
@@ -371,15 +410,18 @@ display: flex;
   }
 }
 @media (max-width: 375px) {
-  .denis_popov-ceo{
-    bottom: 20%;
+  .denis_popov-ceo {
+    .ceo {
+      bottom: -17%;
+      left: 2%;
+    }
   }
 }
-@media (max-width: 340px) {
-
-  .denis_popov-ceo{
-    bottom: 25%;
-  }
-
-}
+//@media (max-width: 340px) {
+//
+//  .denis_popov-ceo{
+//    bottom: 15%;
+//  }
+//
+//}
 </style>
