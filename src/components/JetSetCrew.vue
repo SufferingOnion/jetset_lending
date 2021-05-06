@@ -22,6 +22,10 @@
           </div>
         </div>
       </div>
+      <div class="glide__arrows" data-glide-el="controls">
+        <div class="glide__arrow glide__arrow--left" data-glide-dir="<"></div>
+        <div class="glide__arrow glide__arrow--right" data-glide-dir=">"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -212,22 +216,22 @@ export default {
   },
   mounted() {
     this.Glide = new Glide('.crew',{
-      startAt: 1,
+      startAt: 0,
       perView: 4,
       focusAt: 1,
       gap: 28,
       breakpoints: {
         834: {
-          startAt: 1,
+          startAt: 0,
           perView: 3,
           focusAt: 1,
           gap: 22,
         },
         425: {
-          startAt: 1,
-          perView: 1,
-          focusAt: 1,
-          gap: 0,
+          startAt: 0,
+          perView: 1.4,
+          focusAt: 'center',
+          gap: 14,
         },
       }
     });
@@ -238,15 +242,20 @@ export default {
 <style lang="scss">
 .crew-wrapper{
   margin: 4.31vw 0 6vw;
+  overflow: hidden;
+  .glide__slides{
+    overflow: visible !important;
+    padding-left: 12.6%;
+  }
+  .glide__track{
+    overflow: visible;
+    cursor: grab;
+  }
 }
-.glide__slides{
-  overflow: visible !important;
-  padding-left: 44px;
 
-}
 .crew{
+  position: relative;
   width: 100%;
-  padding-left: 12.6%;
   .glide__slide{
     width: min-content;
     display: flex;
@@ -282,6 +291,25 @@ export default {
       }
     }
   }
+  .glide__arrows{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+    .glide__arrow{
+      pointer-events: all;
+      cursor: pointer;
+      max-width: 120px;
+      height: 100%;
+      width: 20vw;
+      background-color: transparent;
+    }
+  }
   .glide__slide:nth-child(odd) {
 
     padding-bottom: 8.75vw;
@@ -295,8 +323,12 @@ export default {
 }
 
 @media (max-width: 1200px) {
+  .crew-wrapper{
+    .glide__slides{
+      padding-left: 8%;
+    }
+  }
   .crew{
-    padding-left: 8%;
     .glide__slide{
       .member_container{
         .details{
@@ -335,10 +367,19 @@ export default {
 @media (max-width: 425px) {
   .crew{
     padding-left: 0;
+    .glide__slide:nth-child(odd) {
+      padding-bottom: 50px;
+    }
+    .glide__slide:nth-child(even) {
+      padding-top: 50px;
+    }
+    .glide__slides{
+      padding-left: 0px;
+    }
     .glide__slide{
       .member_container{
         width: 100%;
-        padding: 0 14.6vw;
+        padding: 0;
         .member{
           width: 100%;
         }

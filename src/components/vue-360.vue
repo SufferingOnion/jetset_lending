@@ -293,15 +293,51 @@ export default {
 @media (max-width: 1200px) {
   .slide__item{
     .item_header {
-
+      padding: 0 4vw;
       .header_text {
         font-size: 30px;
       }
       .descr_text{
-        font-size: 18px;
+        font-size: 22px;
 
       }
     }
+  }
+  .carousel__arrows{
+    top: calc(50% - 50px);
+    .carousel__arrow{
+      width: 25px;
+      height: 25px;
+      padding: 50px;
+      background-size: 25%;
+      &--left{
+        left: calc(2% - 50px);
+        top: 17%;
+      }
+      &--right{
+        right:  calc(2% - 50px);
+        top: 17%;
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .a {
+    transform: rotateY(0deg) translateZ(40vw) scale(0.9);
+  }
+  .b {
+    transform: rotateY(60deg) translateZ(40vw) scale(0.9);
+  }
+  .c {
+    transform: rotateY(120deg) translateZ(40vw) scale(0.9);
+  }
+  .d {
+    transform: rotateY(180deg) translateZ(40vw) scale(0.9);
+  }
+  .e {
+    transform: rotateY(240deg) translateZ(40vw) scale(0.9);
+  }
+  .f {
+    transform: rotateY(300deg) translateZ(40vw) scale(0.9);
   }
 }
 @media (max-width: 1000px) {
@@ -329,7 +365,7 @@ export default {
       right: 67%;
     }
     .item_header {
-      padding: 0 17.291%;
+      padding: 0 5.875%;
     }
   }
   .a {
