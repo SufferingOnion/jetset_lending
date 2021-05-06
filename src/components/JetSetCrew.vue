@@ -218,13 +218,13 @@ export default {
     this.Glide = new Glide('.crew',{
       startAt: 0,
       perView: 4,
-      focusAt: 1,
+      focusAt: 0,
       gap: 28,
       breakpoints: {
         834: {
           startAt: 0,
           perView: 3,
-          focusAt: 1,
+          focusAt: 0,
           gap: 22,
         },
         425: {
