@@ -31,7 +31,7 @@ jobs:
         run: $BUILD_SCRIPT
       # Доставляем собранное приложение на сервер
       - name: Deploy to Server
-        uses: SufferingOnion/jetset_lending@main
+        uses: sufferingonion/jetset_lending@main
         with:
           host: ${{ secrets.DEPLOY_SERVER_HOST }}
           port: ${{ secrets.DEPLOY_SERVER_PORT }}
@@ -41,5 +41,5 @@ jobs:
           target: ${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
           strip_components: 1
       - name: Print Info
-        run: echo "Deployed at https://${BRANCH_NAME}.app.example.ru/"
+        run: echo "Deployed at https://${BRANCH_NAME}.jetsetholding.world/"
 
