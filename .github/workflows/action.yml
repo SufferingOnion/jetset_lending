@@ -41,5 +41,5 @@ jobs:
           target: ${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
           strip_components: 1
       - name: Print Info
-        run: echo "Deployed at https://${BRANCH_NAME}.jetsetholding.world/"
+        run: echo "Deployed at https://${BRANCH_NAME}.app.example.ru/"
 
