@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   outputDir: 'docs',
-  publicPath: '/',
+  publicPath: '',
   productionSourceMap: false,
   pluginOptions: {
     dll: {
