@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   outputDir: 'docs',
-  publicPath: '/jetset_lending/',
+  publicPath: '/',
   productionSourceMap: false,
   pluginOptions: {
     dll: {
