@@ -80,7 +80,7 @@ export default {
       const loader = new GLTFLoader();
       let vm = this;
       if(process.env.NODE_ENV === 'production'){
-        loader.load('/jetset_lending/GTLF/Logo/Logo.gltf', function (result) {
+        loader.load('/GTLF/Logo/Logo.gltf', function (result) {
           vm.logo = result.scene || result.scenes[0];
           vm.logo.scale.set(300, 300, 300);
           vm.logo.position.set(-400, -50, 0);
@@ -135,7 +135,7 @@ export default {
 
       new RGBELoader()
           .setDataType( THREE.UnsignedByteType )
-          .setPath(process.env.NODE_ENV === 'production'?'/jetset_lending/hdr/':'./hdr/')
+          .setPath(process.env.NODE_ENV === 'production'?'/hdr/':'./hdr/')
           .load( 'background2.hdr', function ( texture ) {
 
             const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
