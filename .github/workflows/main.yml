@@ -28,7 +28,7 @@ jobs:
         run: $BUILD_SCRIPT
       # Доставляем собранное приложение на сервер
       - name: Deploy to Server
-        uses: sufferingonion/jetset_lending@main
+        uses: SufferingOnion/jetset_lending@main
         with:
           host: ${{ secrets.DEPLOY_SERVER_HOST }}
           port: ${{ secrets.DEPLOY_SERVER_PORT }}
