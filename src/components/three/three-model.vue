@@ -150,6 +150,7 @@ export default {
     onDocumentMouseMove: function(e){
       this.mouseX = e.clientX;
       this.mouseY = e.clientY;
+
     },
     render: function(){
         this.logo.rotation.z = -0.35-(this.mouseX - this.width / 2) / 5000;
