@@ -29,6 +29,7 @@ import Footer from "@/components/footer";
 export default {
   data() {
     return {
+
     }
   },
   components: {
@@ -67,7 +68,6 @@ export default {
 }
 
 .container{
-
   max-width: 1920px;
   width: 100%;
   margin: 0 auto  45px;
